@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import { validateEmail } from '../../utils/validation';
-import { Compass, Mail, Lock, Eye, EyeOff, Sparkles, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Compass, Mail, Lock, Eye, EyeOff, Sparkles, ArrowRight, Crown } from 'lucide-react';
 
 export default function LoginPage() {
   const { login, setCurrentView, showToast } = useApp();
@@ -15,7 +15,6 @@ export default function LoginPage() {
   const [showForgotModal, setShowForgotModal] = useState(false);
   const [forgotEmail, setForgotEmail] = useState('');
 
-  // Live Email Validation on Change
   const handleEmailChange = (e) => {
     const val = e.target.value;
     setEmail(val);
@@ -27,7 +26,6 @@ export default function LoginPage() {
     }
   };
 
-  // Live Password Change
   const handlePasswordChange = (e) => {
     const val = e.target.value;
     setPassword(val);
@@ -59,7 +57,6 @@ export default function LoginPage() {
     }, 600);
   };
 
-  // 1-Click Demo Login Helper
   const handleQuickDemoLogin = (demoEmail, demoName) => {
     setEmail(demoEmail);
     setPassword('India@2026!');
@@ -88,41 +85,41 @@ export default function LoginPage() {
       <div className="max-w-md w-full space-y-8 bg-white p-8 rounded-3xl shadow-2xl border border-sand-200 animate-slide-up relative overflow-hidden">
         
         {/* Decorative Top Gradient Stripe */}
-        <div className="absolute top-0 left-0 right-0 h-2 india-gradient" />
+        <div className="absolute top-0 left-0 right-0 h-2 royal-gold-gradient" />
 
         {/* Header Branding */}
         <div className="text-center">
-          <div className="mx-auto w-14 h-14 rounded-2xl saffron-gradient flex items-center justify-center text-white shadow-lg shadow-saffron-500/30 mb-3">
-            <Compass className="w-8 h-8 animate-pulse-subtle" />
+          <div className="mx-auto w-14 h-14 rounded-2xl royal-gold-gradient flex items-center justify-center text-navy-950 shadow-lg shadow-gold-500/30 mb-3 font-bold">
+            <Crown className="w-8 h-8 text-navy-950 animate-pulse-subtle" />
           </div>
-          <h2 className="text-2xl font-extrabold font-heading text-slate-900">
-            Welcome back to Globe<span className="text-saffron-500">Trotter</span>
+          <h2 className="text-2xl font-extrabold font-heading text-navy-950">
+            Welcome to Globe<span className="text-gold-600">Trotter</span>
           </h2>
           <p className="text-xs text-slate-500 mt-1">
-            Sign in to access your curated Indian itineraries, budgets & bookmarks
+            Sign in to access your royal itineraries, budgets & saved routes
           </p>
         </div>
 
         {/* 1-Click Demo Accounts Banner */}
-        <div className="p-3.5 rounded-2xl bg-sand-100/70 border border-sand-200">
-          <div className="flex items-center gap-1.5 text-xs font-bold text-slate-700 mb-2">
-            <Sparkles className="w-3.5 h-3.5 text-saffron-600" />
+        <div className="p-3.5 rounded-2xl bg-sand-100/80 border border-sand-200">
+          <div className="flex items-center gap-1.5 text-xs font-bold text-navy-900 mb-2">
+            <Sparkles className="w-3.5 h-3.5 text-gold-600" />
             <span>1-Click Demo Profiles</span>
           </div>
           <div className="grid grid-cols-2 gap-2">
             <button
               type="button"
               onClick={() => handleQuickDemoLogin('aarav.sharma@traveler.in', 'Aarav (Explorer)')}
-              className="px-2.5 py-1.5 text-[11px] font-semibold bg-white text-slate-800 rounded-xl border border-sand-300 hover:border-saffron-500 hover:text-saffron-600 transition-all text-left truncate"
+              className="px-2.5 py-1.5 text-[11px] font-semibold bg-white text-navy-950 rounded-xl border border-sand-300 hover:border-gold-500 hover:text-gold-700 transition-all text-left truncate"
             >
               🇮🇳 Aarav Sharma
             </button>
             <button
               type="button"
               onClick={() => handleQuickDemoLogin('priya.patel@heritage.in', 'Priya (Luxury)')}
-              className="px-2.5 py-1.5 text-[11px] font-semibold bg-white text-slate-800 rounded-xl border border-sand-300 hover:border-indiaTeal-500 hover:text-indiaTeal-700 transition-all text-left truncate"
+              className="px-2.5 py-1.5 text-[11px] font-semibold bg-white text-navy-950 rounded-xl border border-sand-300 hover:border-gold-500 hover:text-gold-700 transition-all text-left truncate"
             >
-              ✨ Priya Patel
+              👑 Priya Patel
             </button>
           </div>
         </div>
@@ -130,9 +127,9 @@ export default function LoginPage() {
         {/* Form Fields */}
         <form className="mt-6 space-y-4" onSubmit={handleLoginSubmit}>
           
-          {/* Email Field with Live Validation */}
+          {/* Email Field */}
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
+            <label className="block text-xs font-bold uppercase tracking-wider text-navy-900 mb-1">
               Email Address
             </label>
             <div className="relative">
@@ -146,7 +143,7 @@ export default function LoginPage() {
                     ? 'border-red-400 focus:ring-red-300 bg-red-50/20'
                     : email && !emailError
                     ? 'border-emerald-400 focus:ring-emerald-300'
-                    : 'border-sand-300 focus:ring-saffron-400 focus:border-saffron-500'
+                    : 'border-sand-300 focus:ring-gold-400 focus:border-gold-500'
                 }`}
               />
               <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
@@ -161,13 +158,13 @@ export default function LoginPage() {
           {/* Password Field */}
           <div>
             <div className="flex items-center justify-between mb-1">
-              <label className="block text-xs font-bold uppercase tracking-wider text-slate-700">
+              <label className="block text-xs font-bold uppercase tracking-wider text-navy-900">
                 Password
               </label>
               <button
                 type="button"
                 onClick={() => setShowForgotModal(true)}
-                className="text-[11px] font-semibold text-saffron-600 hover:text-saffron-700 transition-colors"
+                className="text-[11px] font-bold text-gold-700 hover:text-gold-800 transition-colors"
               >
                 Forgot Password?
               </button>
@@ -181,7 +178,7 @@ export default function LoginPage() {
                 className={`w-full pl-10 pr-10 py-2.5 text-sm bg-sand-50 border rounded-xl focus:outline-none focus:ring-2 transition-all ${
                   passwordError
                     ? 'border-red-400 focus:ring-red-300 bg-red-50/20'
-                    : 'border-sand-300 focus:ring-saffron-400 focus:border-saffron-500'
+                    : 'border-sand-300 focus:ring-gold-400 focus:border-gold-500'
                 }`}
               />
               <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
@@ -204,14 +201,14 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full mt-4 py-3 px-4 saffron-gradient hover:opacity-95 text-white font-heading font-bold text-sm rounded-xl shadow-lg shadow-saffron-500/25 transition-all hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-2"
+            className="w-full mt-4 py-3 px-4 royal-gold-gradient hover:opacity-95 text-navy-950 font-heading font-extrabold text-sm rounded-xl shadow-lg shadow-gold-500/25 transition-all hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-2"
           >
             {isSubmitting ? (
-              <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+              <div className="w-5 h-5 border-2 border-navy-950 border-t-transparent rounded-full animate-spin" />
             ) : (
               <>
                 <span>Sign In to GlobeTrotter</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 text-navy-950" />
               </>
             )}
           </button>
@@ -223,7 +220,7 @@ export default function LoginPage() {
             Don't have an account yet?{' '}
             <button
               onClick={() => setCurrentView('register')}
-              className="font-bold text-saffron-600 hover:text-saffron-700 transition-colors"
+              className="font-bold text-gold-700 hover:text-gold-800 transition-colors"
             >
               Create Free Account
             </button>
@@ -234,9 +231,9 @@ export default function LoginPage() {
 
       {/* Forgot Password Modal */}
       {showForgotModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm animate-fade-in">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-950/60 backdrop-blur-sm animate-fade-in">
           <div className="bg-white max-w-sm w-full p-6 rounded-3xl shadow-2xl border border-sand-200">
-            <h3 className="text-lg font-heading font-bold text-slate-900">Reset Your Password</h3>
+            <h3 className="text-lg font-heading font-bold text-navy-950">Reset Your Password</h3>
             <p className="text-xs text-slate-500 mt-1">
               Enter your registered email address to receive a secure password reset link.
             </p>
@@ -246,20 +243,20 @@ export default function LoginPage() {
                 value={forgotEmail}
                 onChange={(e) => setForgotEmail(e.target.value)}
                 placeholder="e.g. explorer@india.com"
-                className="w-full px-3.5 py-2 text-sm bg-sand-50 border border-sand-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-saffron-400"
+                className="w-full px-3.5 py-2 text-sm bg-sand-50 border border-sand-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold-400"
                 required
               />
               <div className="flex items-center justify-end gap-2 pt-2">
                 <button
                   type="button"
                   onClick={() => setShowForgotModal(false)}
-                  className="px-4 py-2 text-xs font-semibold text-slate-600 hover:bg-sand-100 rounded-xl"
+                  className="px-4 py-2 text-xs font-bold text-slate-600 hover:bg-sand-100 rounded-xl"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 text-xs font-semibold text-white saffron-gradient rounded-xl shadow-md"
+                  className="px-4 py-2 text-xs font-bold text-navy-950 royal-gold-gradient rounded-xl shadow-md"
                 >
                   Send Reset Link
                 </button>

@@ -18,7 +18,8 @@ import {
   CheckCircle2, 
   IndianRupee,
   Luggage,
-  Info
+  Info,
+  Crown
 } from 'lucide-react';
 
 export default function Step1Setup({ onNext }) {
@@ -43,7 +44,7 @@ export default function Step1Setup({ onNext }) {
   const [budgetError, setBudgetError] = useState('');
   const [durationDays, setDurationDays] = useState(5);
 
-  // Live validate dates whenever startDate or endDate changes
+  // Live validate dates
   useEffect(() => {
     const dateResult = validateTripDates(startDate, endDate);
     if (!dateResult.isValid) {
@@ -55,14 +56,12 @@ export default function Step1Setup({ onNext }) {
     }
   }, [startDate, endDate]);
 
-  // Live validate travelers
   const handleTravelersChange = (val) => {
     setTravelers(val);
     const result = validateTravelers(val);
     setTravelersError(result.error);
   };
 
-  // Live validate custom budget
   const handleBudgetChange = (val) => {
     setCustomBudget(val);
     const result = validateBudget(val);
@@ -74,7 +73,6 @@ export default function Step1Setup({ onNext }) {
   const handleSubmitStep1 = (e) => {
     e.preventDefault();
 
-    // Re-verify strictly
     const dateVal = validateTripDates(startDate, endDate);
     const travelersVal = validateTravelers(travelers);
     const budgetVal = validateBudget(customBudget);
@@ -95,7 +93,6 @@ export default function Step1Setup({ onNext }) {
       return;
     }
 
-    // Generate multi-plans
     const generated = generatePlansForCity(cityId, startDate, dateVal.durationDays, parseInt(travelers, 10));
 
     setWizardState(prev => ({
@@ -123,14 +120,14 @@ export default function Step1Setup({ onNext }) {
       
       {/* Step Header */}
       <div className="text-center max-w-2xl mx-auto space-y-2">
-        <span className="px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-saffron-100 text-saffron-800 border border-saffron-200">
-          Step 1 of 3: Trip Parameters
+        <span className="px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-gold-500/15 text-gold-800 border border-gold-400">
+          Step 1 of 3: Royal Trip Parameters
         </span>
-        <h2 className="text-3xl font-extrabold font-heading text-slate-900">
+        <h2 className="text-3xl font-extrabold font-heading text-navy-950">
           Where & When Are You Traveling?
         </h2>
         <p className="text-xs sm:text-sm text-slate-500">
-          Enter destination and dates. Our AI generator builds multi-tier plans with live INR budgeting.
+          Select destination and dates. Our AI generator builds multi-tier plans with live INR budgeting.
         </p>
       </div>
 
@@ -138,9 +135,9 @@ export default function Step1Setup({ onNext }) {
         
         {/* City Destination Selector */}
         <div>
-          <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-3 flex items-center justify-between">
+          <label className="block text-xs font-bold uppercase tracking-wider text-navy-900 mb-3 flex items-center justify-between">
             <span className="flex items-center gap-1.5">
-              <MapPin className="w-4 h-4 text-saffron-500" />
+              <Crown className="w-4 h-4 text-gold-600" />
               <span>Select Destination City in India</span>
             </span>
             <span className="text-[11px] text-slate-400 font-normal">7 Popular Cities</span>
@@ -156,20 +153,20 @@ export default function Step1Setup({ onNext }) {
                   onClick={() => setCityId(city.id)}
                   className={`p-3 rounded-2xl border text-center transition-all flex flex-col items-center justify-between gap-2 group ${
                     isSelected
-                      ? 'saffron-gradient text-white border-transparent shadow-lg shadow-saffron-500/30 scale-102'
-                      : 'bg-sand-50 hover:bg-sand-100/80 text-slate-800 border-sand-200'
+                      ? 'imperial-navy-gradient text-white border-transparent shadow-lg shadow-navy-900/30 scale-102 ring-2 ring-gold-400'
+                      : 'bg-sand-50 hover:bg-sand-100/80 text-navy-900 border-sand-200'
                   }`}
                 >
                   <img
                     src={city.heroImage}
                     alt={city.name}
-                    className="w-12 h-12 rounded-xl object-cover shadow-sm group-hover:scale-105 transition-transform"
+                    className="w-12 h-12 rounded-xl object-cover shadow-sm group-hover:scale-105 transition-transform border border-sand-200"
                   />
                   <div>
                     <div className="text-xs font-bold truncate leading-tight">
                       {city.name}
                     </div>
-                    <div className={`text-[10px] truncate ${isSelected ? 'text-white/80' : 'text-slate-500'}`}>
+                    <div className={`text-[10px] truncate ${isSelected ? 'text-gold-300' : 'text-slate-500'}`}>
                       ₹{city.startingPrice.toLocaleString('en-IN')}/d
                     </div>
                   </div>
@@ -180,22 +177,22 @@ export default function Step1Setup({ onNext }) {
         </div>
 
         {/* Selected City Snippet */}
-        <div className="p-4 rounded-2xl bg-sand-100/60 border border-sand-200 flex items-center gap-3">
+        <div className="p-4 rounded-2xl bg-sand-100/70 border border-sand-200 flex items-center gap-3">
           <img
             src={selectedCity.heroImage}
             alt={selectedCity.name}
-            className="w-16 h-16 rounded-xl object-cover flex-shrink-0"
+            className="w-16 h-16 rounded-xl object-cover flex-shrink-0 border border-sand-300"
           />
           <div className="min-w-0">
             <div className="flex items-center gap-2">
-              <h4 className="text-sm font-bold text-slate-900">{selectedCity.name}, {selectedCity.state}</h4>
-              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-indiaTeal-100 text-indiaTeal-800">
+              <h4 className="text-sm font-bold text-navy-950">{selectedCity.name}, {selectedCity.state}</h4>
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-navy-900 text-gold-300">
                 {selectedCity.category}
               </span>
             </div>
             <p className="text-xs text-slate-600 mt-0.5 line-clamp-1">{selectedCity.tagline}</p>
-            <p className="text-[11px] text-amber-700 font-semibold mt-1">
-              ☀️ Best Time: {selectedCity.bestTimeToVisit}
+            <p className="text-[11px] text-gold-700 font-semibold mt-1">
+              ☀️ Best Season: {selectedCity.bestTimeToVisit}
             </p>
           </div>
         </div>
@@ -206,8 +203,8 @@ export default function Step1Setup({ onNext }) {
             
             {/* Start Date */}
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1 flex items-center gap-1.5">
-                <Calendar className="w-4 h-4 text-indiaTeal-600" />
+              <label className="block text-xs font-bold uppercase tracking-wider text-navy-900 mb-1 flex items-center gap-1.5">
+                <Calendar className="w-4 h-4 text-gold-600" />
                 <span>Start Date (Departure)</span>
               </label>
               <input
@@ -215,15 +212,15 @@ export default function Step1Setup({ onNext }) {
                 min={todayStr}
                 value={startDate}
                 onChange={(e) => setStartDate(e.target.value)}
-                className="w-full px-4 py-2.5 text-sm bg-sand-50 border border-sand-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-saffron-400 focus:border-saffron-500 font-medium text-slate-800"
+                className="w-full px-4 py-2.5 text-sm bg-sand-50 border border-sand-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-gold-500 font-medium text-navy-950"
               />
               <p className="text-[10px] text-slate-400 mt-1">Cannot be prior to today ({todayStr})</p>
             </div>
 
             {/* End Date */}
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1 flex items-center gap-1.5">
-                <Calendar className="w-4 h-4 text-indiaTeal-600" />
+              <label className="block text-xs font-bold uppercase tracking-wider text-navy-900 mb-1 flex items-center gap-1.5">
+                <Calendar className="w-4 h-4 text-gold-600" />
                 <span>End Date (Return)</span>
               </label>
               <input
@@ -231,10 +228,10 @@ export default function Step1Setup({ onNext }) {
                 min={startDate || todayStr}
                 value={endDate}
                 onChange={(e) => setEndDate(e.target.value)}
-                className={`w-full px-4 py-2.5 text-sm bg-sand-50 border rounded-xl focus:outline-none focus:ring-2 font-medium text-slate-800 ${
+                className={`w-full px-4 py-2.5 text-sm bg-sand-50 border rounded-xl focus:outline-none focus:ring-2 font-medium text-navy-950 ${
                   dateError
                     ? 'border-red-400 focus:ring-red-300 bg-red-50/20'
-                    : 'border-sand-300 focus:ring-saffron-400 focus:border-saffron-500'
+                    : 'border-sand-300 focus:ring-gold-400 focus:border-gold-500'
                 }`}
               />
               <p className="text-[10px] text-slate-400 mt-1">Must be on or after Start Date</p>
@@ -252,7 +249,7 @@ export default function Step1Setup({ onNext }) {
             </div>
           )}
 
-          {/* Strict 14-Day Limit & Date Error Display */}
+          {/* Strict 14-Day Limit Alert */}
           {dateError && (
             <div className="flex items-start gap-2.5 p-3.5 bg-red-50 border border-red-200 rounded-2xl text-xs text-red-700 animate-fade-in">
               <AlertTriangle className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" />
@@ -269,9 +266,9 @@ export default function Step1Setup({ onNext }) {
           
           {/* Travelers Count (1 to 20 Strict) */}
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1 flex items-center justify-between">
+            <label className="block text-xs font-bold uppercase tracking-wider text-navy-900 mb-1 flex items-center justify-between">
               <span className="flex items-center gap-1.5">
-                <Users className="w-4 h-4 text-saffron-600" />
+                <Users className="w-4 h-4 text-gold-600" />
                 <span>Travelers Count</span>
               </span>
               <span className="text-[11px] text-slate-400">1 – 20 people</span>
@@ -280,7 +277,7 @@ export default function Step1Setup({ onNext }) {
               <button
                 type="button"
                 onClick={() => handleTravelersChange(Math.max(1, Number(travelers) - 1))}
-                className="w-10 h-10 rounded-xl bg-sand-100 hover:bg-sand-200 border border-sand-300 font-bold text-slate-700 text-lg flex items-center justify-center"
+                className="w-10 h-10 rounded-xl bg-sand-100 hover:bg-sand-200 border border-sand-300 font-bold text-navy-900 text-lg flex items-center justify-center"
               >
                 -
               </button>
@@ -291,13 +288,13 @@ export default function Step1Setup({ onNext }) {
                 value={travelers}
                 onChange={(e) => handleTravelersChange(e.target.value)}
                 className={`flex-1 text-center py-2 text-sm font-bold bg-sand-50 border rounded-xl focus:outline-none focus:ring-2 ${
-                  travelersError ? 'border-red-400' : 'border-sand-300 focus:ring-saffron-400'
+                  travelersError ? 'border-red-400' : 'border-sand-300 focus:ring-gold-400'
                 }`}
               />
               <button
                 type="button"
                 onClick={() => handleTravelersChange(Math.min(20, Number(travelers) + 1))}
-                className="w-10 h-10 rounded-xl bg-sand-100 hover:bg-sand-200 border border-sand-300 font-bold text-slate-700 text-lg flex items-center justify-center"
+                className="w-10 h-10 rounded-xl bg-sand-100 hover:bg-sand-200 border border-sand-300 font-bold text-navy-900 text-lg flex items-center justify-center"
               >
                 +
               </button>
@@ -309,9 +306,9 @@ export default function Step1Setup({ onNext }) {
 
           {/* Custom Budget in ₹ (> 0 Strict) */}
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1 flex items-center justify-between">
+            <label className="block text-xs font-bold uppercase tracking-wider text-navy-900 mb-1 flex items-center justify-between">
               <span className="flex items-center gap-1.5">
-                <IndianRupee className="w-4 h-4 text-indiaTeal-600" />
+                <IndianRupee className="w-4 h-4 text-gold-600" />
                 <span>Target Budget (₹ INR)</span>
               </span>
               <span className="text-[11px] text-slate-400">Total for group</span>
@@ -325,7 +322,7 @@ export default function Step1Setup({ onNext }) {
                 onChange={(e) => handleBudgetChange(e.target.value)}
                 placeholder="e.g. 45000"
                 className={`w-full pl-9 pr-4 py-2.5 text-sm bg-sand-50 border rounded-xl focus:outline-none focus:ring-2 font-medium ${
-                  budgetError ? 'border-red-400' : 'border-sand-300 focus:ring-saffron-400'
+                  budgetError ? 'border-red-400' : 'border-sand-300 focus:ring-gold-400'
                 }`}
               />
               <span className="absolute left-3.5 top-2.5 text-slate-400 font-bold text-sm">₹</span>
@@ -343,8 +340,8 @@ export default function Step1Setup({ onNext }) {
 
         {/* Travel Style Preference */}
         <div>
-          <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2 flex items-center gap-1.5">
-            <Luggage className="w-4 h-4 text-purple-600" />
+          <label className="block text-xs font-bold uppercase tracking-wider text-navy-900 mb-2 flex items-center gap-1.5">
+            <Luggage className="w-4 h-4 text-gold-600" />
             <span>Preferred Travel Theme & Pace</span>
           </label>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
@@ -360,13 +357,13 @@ export default function Step1Setup({ onNext }) {
                 onClick={() => setTravelStyle(style.id)}
                 className={`p-3 rounded-2xl border text-left transition-all ${
                   travelStyle === style.id
-                    ? 'bg-slate-900 text-white border-slate-900 shadow-md'
-                    : 'bg-sand-50 hover:bg-sand-100 text-slate-800 border-sand-200'
+                    ? 'bg-navy-900 text-white border-navy-900 shadow-md ring-2 ring-gold-400'
+                    : 'bg-sand-50 hover:bg-sand-100 text-navy-900 border-sand-200'
                 }`}
               >
                 <div className="text-lg mb-1">{style.icon}</div>
                 <div className="text-xs font-bold leading-tight">{style.label}</div>
-                <div className={`text-[10px] mt-0.5 ${travelStyle === style.id ? 'text-slate-300' : 'text-slate-500'}`}>
+                <div className={`text-[10px] mt-0.5 ${travelStyle === style.id ? 'text-gold-300' : 'text-slate-500'}`}>
                   {style.desc}
                 </div>
               </button>
@@ -377,16 +374,16 @@ export default function Step1Setup({ onNext }) {
         {/* Submit Step 1 Button */}
         <div className="pt-4 border-t border-sand-200 flex items-center justify-between">
           <div className="text-xs text-slate-500 flex items-center gap-1">
-            <Info className="w-4 h-4 text-indiaTeal-600" />
+            <Info className="w-4 h-4 text-gold-600" />
             <span>Instant multi-plan options generated in Step 2</span>
           </div>
 
           <button
             type="submit"
             disabled={!isFormValid}
-            className={`px-8 py-3.5 font-heading font-bold text-sm rounded-2xl shadow-xl transition-all flex items-center gap-2 ${
+            className={`px-8 py-3.5 font-heading font-extrabold text-sm rounded-2xl shadow-xl transition-all flex items-center gap-2 ${
               isFormValid
-                ? 'saffron-gradient text-white hover:opacity-95 hover:scale-105 shadow-saffron-500/25 active:scale-95 cursor-pointer'
+                ? 'royal-gold-gradient text-navy-950 hover:opacity-95 hover:scale-105 shadow-gold-500/25 active:scale-95 cursor-pointer'
                 : 'bg-slate-300 text-slate-500 cursor-not-allowed'
             }`}
           >

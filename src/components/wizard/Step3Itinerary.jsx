@@ -24,7 +24,8 @@ import {
   Tag,
   Share2,
   ChevronDown,
-  ChevronUp
+  ChevronUp,
+  Crown
 } from 'lucide-react';
 
 export default function Step3Itinerary({ onBack }) {
@@ -44,7 +45,7 @@ export default function Step3Itinerary({ onBack }) {
   const [openDayAccordions, setOpenDayAccordions] = useState({ 1: true, 2: true });
   const [isActivityDrawerOpen, setIsActivityDrawerOpen] = useState(false);
   const [tripTitle, setTripTitle] = useState(
-    itinerary?.title || `${city.name} Custom Journey`
+    itinerary?.title || `${city.name} Royal Journey`
   );
 
   if (!itinerary) {
@@ -53,7 +54,7 @@ export default function Step3Itinerary({ onBack }) {
         <p className="text-slate-500">No itinerary selected. Please return to Step 1.</p>
         <button
           onClick={onBack}
-          className="mt-4 px-4 py-2 bg-saffron-500 text-white rounded-xl"
+          className="mt-4 px-4 py-2 bg-gold-500 text-navy-950 rounded-xl font-bold"
         >
           Return to Parameters
         </button>
@@ -61,7 +62,6 @@ export default function Step3Itinerary({ onBack }) {
     );
   }
 
-  // Calculate live costs
   const costBreakdown = calculateDetailedTripCost(itinerary);
 
   const toggleAccordion = (dayNum) => {
@@ -95,11 +95,11 @@ export default function Step3Itinerary({ onBack }) {
 
   const getActivityIcon = (category) => {
     switch (category) {
-      case 'Food': return <Utensils className="w-3.5 h-3.5 text-amber-600" />;
-      case 'Sightseeing': return <Landmark className="w-3.5 h-3.5 text-saffron-600" />;
-      case 'Culture': return <Sparkles className="w-3.5 h-3.5 text-purple-600" />;
-      case 'Adventure': return <Compass className="w-3.5 h-3.5 text-indiaTeal-600" />;
-      case 'Transport': return <Car className="w-3.5 h-3.5 text-indigo-600" />;
+      case 'Food': return <Utensils className="w-3.5 h-3.5 text-gold-700" />;
+      case 'Sightseeing': return <Landmark className="w-3.5 h-3.5 text-navy-800" />;
+      case 'Culture': return <Crown className="w-3.5 h-3.5 text-gold-600" />;
+      case 'Adventure': return <Compass className="w-3.5 h-3.5 text-indigo-700" />;
+      case 'Transport': return <Car className="w-3.5 h-3.5 text-navy-700" />;
       default: return <Tag className="w-3.5 h-3.5 text-slate-600" />;
     }
   };
@@ -111,8 +111,8 @@ export default function Step3Itinerary({ onBack }) {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 rounded-3xl border border-sand-200 shadow-sm">
         <div className="space-y-1">
           <div className="flex items-center gap-2">
-            <span className="px-3 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-800">
-              Step 3: Interactive Itinerary Customizer
+            <span className="px-3 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-gold-500/20 text-gold-900 border border-gold-400">
+              Step 3: Royal Itinerary Customizer
             </span>
             <span className="text-xs text-slate-500">
               {wizardState.durationDays} Days • {wizardState.travelers} Travelers
@@ -122,11 +122,11 @@ export default function Step3Itinerary({ onBack }) {
             type="text"
             value={tripTitle}
             onChange={(e) => setTripTitle(e.target.value)}
-            className="text-2xl font-extrabold font-heading text-slate-900 bg-transparent border-b border-transparent hover:border-sand-300 focus:border-saffron-500 focus:outline-none transition-colors w-full max-w-xl"
+            className="text-2xl font-extrabold font-heading text-navy-950 bg-transparent border-b border-transparent hover:border-gold-300 focus:border-gold-500 focus:outline-none transition-colors w-full max-w-xl"
             title="Click to edit trip title"
           />
           <p className="text-xs text-slate-500 flex items-center gap-1">
-            <MapPin className="w-3.5 h-3.5 text-saffron-500" />
+            <MapPin className="w-3.5 h-3.5 text-gold-600" />
             <span>{city.name}, {city.state} • {formatDate(wizardState.startDate)} to {formatDate(wizardState.endDate)}</span>
           </p>
         </div>
@@ -137,16 +137,16 @@ export default function Step3Itinerary({ onBack }) {
             <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">
               Total Budget
             </div>
-            <div className="text-xl font-extrabold font-heading text-slate-900 text-gradient-saffron">
+            <div className="text-xl font-extrabold font-heading text-navy-950 text-gradient-gold">
               {formatINR(costBreakdown.total)}
             </div>
           </div>
 
           <button
             onClick={handleSaveToMyTrips}
-            className="px-6 py-3 saffron-gradient hover:opacity-95 text-white font-heading font-bold text-xs sm:text-sm rounded-2xl shadow-xl shadow-saffron-500/30 hover:scale-105 active:scale-95 transition-all flex items-center gap-2"
+            className="px-6 py-3 royal-gold-gradient hover:opacity-95 text-navy-950 font-heading font-extrabold text-xs sm:text-sm rounded-2xl shadow-xl shadow-gold-500/25 hover:scale-105 active:scale-95 transition-all flex items-center gap-2"
           >
-            <Save className="w-4 h-4" />
+            <Save className="w-4 h-4 text-navy-950" />
             <span>Save to My Trips</span>
           </button>
         </div>
@@ -159,9 +159,9 @@ export default function Step3Itinerary({ onBack }) {
         <div className="lg:col-span-7 space-y-4">
           
           {/* Action Bar with "+ Add Custom Activity" */}
-          <div className="flex items-center justify-between bg-sand-100/70 p-3.5 rounded-2xl border border-sand-200">
+          <div className="flex items-center justify-between bg-sand-100/80 p-3.5 rounded-2xl border border-sand-200">
             <div className="flex items-center gap-2">
-              <span className="text-xs font-bold text-slate-700">Days Sequence:</span>
+              <span className="text-xs font-bold text-navy-900">Days Sequence:</span>
               <div className="flex gap-1">
                 {itinerary.days?.map(d => (
                   <button
@@ -172,8 +172,8 @@ export default function Step3Itinerary({ onBack }) {
                     }}
                     className={`w-7 h-7 rounded-lg text-xs font-bold transition-all ${
                       activeDayNumber === d.dayNumber
-                        ? 'saffron-gradient text-white shadow-sm'
-                        : 'bg-white text-slate-700 hover:bg-sand-200'
+                        ? 'imperial-navy-gradient text-white shadow-sm ring-1 ring-gold-400'
+                        : 'bg-white text-navy-900 hover:bg-sand-200'
                     }`}
                   >
                     {d.dayNumber}
@@ -184,7 +184,7 @@ export default function Step3Itinerary({ onBack }) {
 
             <button
               onClick={() => setIsActivityDrawerOpen(true)}
-              className="px-3.5 py-1.5 bg-white hover:bg-sand-50 border border-sand-300 text-saffron-600 rounded-xl text-xs font-bold shadow-sm transition-all flex items-center gap-1 hover:scale-105"
+              className="px-3.5 py-1.5 bg-white hover:bg-sand-50 border border-sand-300 text-gold-700 rounded-xl text-xs font-bold shadow-sm transition-all flex items-center gap-1 hover:scale-105"
             >
               <Plus className="w-3.5 h-3.5" />
               <span>Add Custom Activity</span>
@@ -192,22 +192,22 @@ export default function Step3Itinerary({ onBack }) {
           </div>
 
           {/* Hotel Stay Card Banner */}
-          <div className="p-4 rounded-3xl bg-indiaTeal-50/70 border border-indiaTeal-200 flex items-center justify-between">
+          <div className="p-4 rounded-3xl bg-navy-900 text-white border border-navy-800 flex items-center justify-between shadow-md">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-2xl bg-indiaTeal-600 text-white flex items-center justify-center shadow-md">
+              <div className="w-10 h-10 rounded-2xl royal-gold-gradient text-navy-950 flex items-center justify-center shadow-md font-bold">
                 <Hotel className="w-5 h-5" />
               </div>
               <div>
-                <span className="text-[10px] font-extrabold uppercase tracking-wider text-indiaTeal-800">
+                <span className="text-[10px] font-extrabold uppercase tracking-wider text-gold-400">
                   Assigned Accommodation ({itinerary.hotel.type})
                 </span>
-                <h4 className="text-xs font-bold text-slate-900">{itinerary.hotel.name}</h4>
-                <p className="text-[11px] text-slate-500">
+                <h4 className="text-xs font-bold text-white">{itinerary.hotel.name}</h4>
+                <p className="text-[11px] text-slate-300">
                   ₹{itinerary.hotel.pricePerNight.toLocaleString('en-IN')} / night × {Math.max(1, wizardState.durationDays - 1)} nights
                 </p>
               </div>
             </div>
-            <span className="text-xs font-extrabold font-heading text-indiaTeal-900">
+            <span className="text-xs font-extrabold font-heading text-gold-400">
               {formatINR(costBreakdown.stays)}
             </span>
           </div>
@@ -231,12 +231,12 @@ export default function Step3Itinerary({ onBack }) {
                     className="p-4 sm:p-5 flex items-center justify-between cursor-pointer hover:bg-sand-50/50 transition-colors border-b border-sand-100"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-2xl saffron-gradient text-white flex items-center justify-center font-bold text-sm shadow-md">
+                      <div className="w-9 h-9 rounded-2xl imperial-navy-gradient text-gold-400 flex items-center justify-center font-bold text-sm shadow-md border border-navy-700">
                         D{day.dayNumber}
                       </div>
                       <div>
                         <div className="flex items-center gap-2">
-                          <h4 className="text-sm font-extrabold font-heading text-slate-900">
+                          <h4 className="text-sm font-extrabold font-heading text-navy-950">
                             Day {day.dayNumber}: {day.theme}
                           </h4>
                         </div>
@@ -250,7 +250,7 @@ export default function Step3Itinerary({ onBack }) {
                           e.stopPropagation();
                           setIsActivityDrawerOpen(true);
                         }}
-                        className="hidden sm:inline-flex items-center gap-1 text-[11px] font-semibold text-saffron-600 hover:text-saffron-700 bg-saffron-50 px-2.5 py-1 rounded-lg border border-saffron-200"
+                        className="hidden sm:inline-flex items-center gap-1 text-[11px] font-bold text-gold-800 hover:text-gold-900 bg-gold-50 px-2.5 py-1 rounded-lg border border-gold-300"
                       >
                         <Plus className="w-3 h-3" />
                         <span>Add to Day {day.dayNumber}</span>
@@ -266,7 +266,7 @@ export default function Step3Itinerary({ onBack }) {
                         day.activities.map((act) => (
                           <div
                             key={act.id}
-                            className="group bg-white p-3.5 rounded-2xl border border-sand-200 hover:border-saffron-300 hover:shadow-md transition-all flex items-start justify-between gap-3"
+                            className="group bg-white p-3.5 rounded-2xl border border-sand-200 hover:border-gold-300 hover:shadow-md transition-all flex items-start justify-between gap-3"
                           >
                             <div className="flex items-start gap-3 min-w-0">
                               <div className="w-8 h-8 rounded-xl bg-sand-100 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -274,14 +274,14 @@ export default function Step3Itinerary({ onBack }) {
                               </div>
                               <div className="min-w-0">
                                 <div className="flex items-center gap-2 flex-wrap">
-                                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-sand-100 text-slate-700">
+                                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-sand-100 text-navy-900">
                                     {act.time}
                                   </span>
-                                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-indiaTeal-50 text-indiaTeal-700">
+                                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-gold-50 text-gold-900">
                                     {act.category}
                                   </span>
                                 </div>
-                                <h5 className="text-xs font-bold text-slate-900 mt-1">
+                                <h5 className="text-xs font-bold text-navy-950 mt-1">
                                   {act.title}
                                 </h5>
                                 {act.notes && (
@@ -295,7 +295,7 @@ export default function Step3Itinerary({ onBack }) {
                             {/* Cost & Delete Action */}
                             <div className="flex items-center gap-3 flex-shrink-0">
                               <div className="text-right">
-                                <span className="text-xs font-bold text-slate-900 font-heading">
+                                <span className="text-xs font-extrabold text-navy-950 font-heading">
                                   {act.cost > 0 ? formatINR(act.cost) : 'Free'}
                                 </span>
                                 {act.cost > 0 && wizardState.travelers > 1 && (
@@ -320,7 +320,7 @@ export default function Step3Itinerary({ onBack }) {
                           <p className="text-xs text-slate-400">No activities on this day yet.</p>
                           <button
                             onClick={() => setIsActivityDrawerOpen(true)}
-                            className="mt-2 text-xs font-bold text-saffron-600 hover:underline"
+                            className="mt-2 text-xs font-bold text-gold-700 hover:underline"
                           >
                             + Add First Activity
                           </button>
@@ -338,7 +338,7 @@ export default function Step3Itinerary({ onBack }) {
           <div className="pt-2">
             <button
               onClick={onBack}
-              className="px-4 py-2 bg-white border border-sand-300 text-slate-700 rounded-xl text-xs font-bold hover:bg-sand-50 transition-colors flex items-center gap-1.5"
+              className="px-4 py-2 bg-white border border-sand-300 text-navy-900 rounded-xl text-xs font-bold hover:bg-sand-50 transition-colors flex items-center gap-1.5"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Back to Plans Tier</span>

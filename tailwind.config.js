@@ -7,47 +7,65 @@ export default {
   theme: {
     extend: {
       colors: {
-        saffron: {
-          50: '#fff7ed',
-          100: '#ffedd5',
-          200: '#fed7aa',
-          300: '#fdba74',
-          400: '#fb923c',
-          500: '#f97316', // Core Saffron
-          600: '#ea580c',
-          700: '#c2410c',
-          800: '#9a3412',
-          900: '#7c2d12',
-          950: '#431407',
+        // Royal Imperial Navy
+        navy: {
+          50: '#f0f4f8',
+          100: '#d9e2ec',
+          200: '#bcccdc',
+          300: '#9fb3c8',
+          400: '#627d98',
+          500: '#486581',
+          600: '#334e68',
+          700: '#243b53',
+          800: '#1e1b4b', // Imperial Deep Navy
+          900: '#0f172a', // Midnight Obsidian Navy
+          950: '#070a13',
         },
-        indiaTeal: {
-          50: '#f0fdfa',
-          100: '#ccfbf1',
-          200: '#99f6e4',
-          300: '#5eead4',
-          400: '#2dd4bf',
-          500: '#14b8a6',
-          600: '#0d9488', // Core Teal
-          700: '#0f766e',
-          800: '#115e59',
-          900: '#134e4a',
-          950: '#042f2e',
-        },
-        marigold: {
+        // Royal Heritage Gold
+        gold: {
           50: '#fffbeb',
           100: '#fef3c7',
           200: '#fde68a',
           300: '#fcd34d',
           400: '#fbbf24',
-          500: '#f59e0b',
+          500: '#f59e0b', // Imperial Gold
+          600: '#d97706', // Rich Royal Gold
+          700: '#b45309',
+          800: '#92400e',
+          900: '#78350f',
+          950: '#451a03',
+        },
+        saffron: {
+          50: '#fffbeb',
+          100: '#fef3c7',
+          200: '#fde68a',
+          300: '#fcd34d',
+          400: '#fbbf24',
+          500: '#f59e0b', // Mapped to Royal Gold
           600: '#d97706',
           700: '#b45309',
+          800: '#92400e',
+          900: '#78350f',
+          950: '#451a03',
+        },
+        indiaTeal: {
+          50: '#eef2ff',
+          100: '#e0e7ff',
+          200: '#c7d2fe',
+          300: '#a5b4fc',
+          400: '#818cf8',
+          500: '#6366f1',
+          600: '#4f46e5', // Royal Indigo Accent
+          700: '#4338ca',
+          800: '#3730a3',
+          900: '#1e1b4b',
+          950: '#0f172a',
         },
         sand: {
-          50: '#fdfbf7',
-          100: '#f8f4eb',
-          200: '#efe6d5',
-          300: '#e3d4b8',
+          50: '#faf8f5',
+          100: '#f4efe6',
+          200: '#eae2d3',
+          300: '#ded1bc',
         }
       },
       fontFamily: {
@@ -55,9 +73,9 @@ export default {
         sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
       },
       boxShadow: {
-        'glow-saffron': '0 0 25px -5px rgba(249, 115, 22, 0.4)',
-        'glow-teal': '0 0 25px -5px rgba(13, 148, 136, 0.4)',
-        'card-hover': '0 20px 30px -10px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+        'glow-gold': '0 0 25px -5px rgba(245, 158, 11, 0.45)',
+        'glow-navy': '0 0 25px -5px rgba(30, 27, 75, 0.5)',
+        'card-hover': '0 20px 30px -10px rgba(15, 23, 42, 0.12), 0 10px 10px -5px rgba(15, 23, 42, 0.06)',
       },
       animation: {
         'float': 'float 4s ease-in-out infinite',
@@ -72,7 +90,7 @@ export default {
         },
         pulseSubtle: {
           '0%, 100%': { opacity: '1' },
-          '50%': { opacity: '0.75' },
+          '50%': { opacity: '0.8' },
         },
         fadeIn: {
           '0%': { opacity: '0', transform: 'translateY(4px)' },

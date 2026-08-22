@@ -11,7 +11,8 @@ import {
   Hotel, 
   Sparkles,
   Clock,
-  ExternalLink
+  ExternalLink,
+  Crown
 } from 'lucide-react';
 
 export default function TripCard({ trip, onOpenPdf }) {
@@ -22,13 +23,13 @@ export default function TripCard({ trip, onOpenPdf }) {
     switch (status) {
       case 'ongoing':
         return (
-          <span className="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase bg-emerald-500 text-white shadow-md animate-pulse">
+          <span className="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase bg-emerald-600 text-white shadow-md animate-pulse">
             ● Active Journey
           </span>
         );
       case 'upcoming':
         return (
-          <span className="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase bg-indiaTeal-600 text-white shadow-md">
+          <span className="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase bg-navy-900 text-gold-300 border border-gold-500/30 shadow-md">
             Upcoming
           </span>
         );
@@ -49,7 +50,7 @@ export default function TripCard({ trip, onOpenPdf }) {
   };
 
   return (
-    <div className="bg-white rounded-3xl overflow-hidden border border-sand-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+    <div className="bg-white rounded-3xl overflow-hidden border border-sand-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:border-gold-300">
       
       {/* Top Image Section */}
       <div className="relative h-48 overflow-hidden">
@@ -58,7 +59,7 @@ export default function TripCard({ trip, onOpenPdf }) {
           alt={trip.tripTitle}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-950/85 via-navy-950/20 to-transparent" />
 
         {/* Status Badge */}
         <div className="absolute top-3 left-3">
@@ -68,7 +69,7 @@ export default function TripCard({ trip, onOpenPdf }) {
         {/* Action Button for PDF Voucher */}
         <button
           onClick={() => onOpenPdf(trip)}
-          className="absolute top-3 right-3 p-2 rounded-xl bg-slate-900/70 hover:bg-slate-900 backdrop-blur-md text-white text-xs font-bold transition-all flex items-center gap-1 border border-white/20"
+          className="absolute top-3 right-3 p-2 rounded-xl bg-navy-900/80 hover:bg-navy-900 backdrop-blur-md text-gold-300 text-xs font-bold transition-all flex items-center gap-1 border border-gold-500/30"
           title="Print Travel Voucher / PDF"
         >
           <FileText className="w-3.5 h-3.5" />
@@ -77,8 +78,8 @@ export default function TripCard({ trip, onOpenPdf }) {
 
         {/* Title on Image */}
         <div className="absolute bottom-3 left-3 right-3 text-white">
-          <div className="flex items-center gap-1 text-xs text-saffron-300 font-semibold mb-0.5">
-            <MapPin className="w-3.5 h-3.5" />
+          <div className="flex items-center gap-1 text-xs text-gold-400 font-semibold mb-0.5">
+            <MapPin className="w-3.5 h-3.5 text-gold-400" />
             <span>{trip.cityName}, {trip.state}</span>
           </div>
           <h3 className="text-lg font-heading font-extrabold text-white truncate">
@@ -93,32 +94,32 @@ export default function TripCard({ trip, onOpenPdf }) {
         {/* Meta Info: Dates & Travelers */}
         <div className="grid grid-cols-2 gap-2 text-xs text-slate-600">
           <div className="flex items-center gap-1.5 bg-sand-50 p-2.5 rounded-xl border border-sand-200">
-            <Calendar className="w-4 h-4 text-saffron-500 flex-shrink-0" />
-            <span className="truncate font-medium">{formatDateRange(trip.startDate, trip.endDate)}</span>
+            <Calendar className="w-4 h-4 text-gold-600 flex-shrink-0" />
+            <span className="truncate font-medium text-navy-950">{formatDateRange(trip.startDate, trip.endDate)}</span>
           </div>
           <div className="flex items-center gap-1.5 bg-sand-50 p-2.5 rounded-xl border border-sand-200">
-            <Users className="w-4 h-4 text-indiaTeal-600 flex-shrink-0" />
-            <span className="font-medium">{trip.travelers} Travelers • {trip.durationDays} Days</span>
+            <Users className="w-4 h-4 text-gold-600 flex-shrink-0" />
+            <span className="font-medium text-navy-950">{trip.travelers} Travelers • {trip.durationDays} Days</span>
           </div>
         </div>
 
         {/* Hotel Stay Snippet */}
         {trip.hotel && (
-          <div className="flex items-center gap-2 p-2.5 rounded-xl bg-amber-500/10 border border-amber-200/60 text-xs text-slate-800">
-            <Hotel className="w-4 h-4 text-amber-600 flex-shrink-0" />
-            <span className="truncate">
+          <div className="flex items-center gap-2 p-2.5 rounded-xl bg-gold-500/10 border border-gold-300/60 text-xs text-slate-800">
+            <Hotel className="w-4 h-4 text-gold-700 flex-shrink-0" />
+            <span className="truncate text-navy-950">
               Stay: <strong>{trip.hotel.name}</strong>
             </span>
           </div>
         )}
 
         {/* Budget Summary */}
-        <div className="p-3 rounded-2xl bg-sand-100/60 border border-sand-200 flex items-center justify-between">
+        <div className="p-3 rounded-2xl bg-sand-100/70 border border-sand-200 flex items-center justify-between">
           <div>
             <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">
               Total Trip Budget
             </span>
-            <span className="text-base font-extrabold font-heading text-slate-900">
+            <span className="text-base font-extrabold font-heading text-navy-950">
               {formatINR(trip.totalBudget)}
             </span>
           </div>
@@ -127,7 +128,7 @@ export default function TripCard({ trip, onOpenPdf }) {
             <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">
               {trip.days?.length || trip.durationDays} Days Plan
             </span>
-            <span className="text-xs font-bold text-indiaTeal-700">
+            <span className="text-xs font-bold text-navy-800">
               {trip.days ? trip.days.reduce((acc, d) => acc + (d.activities?.length || 0), 0) : 0} Activities
             </span>
           </div>
@@ -138,7 +139,7 @@ export default function TripCard({ trip, onOpenPdf }) {
           
           <button
             onClick={handleViewTimeline}
-            className="flex-1 py-2 px-3 saffron-gradient hover:opacity-95 text-white text-xs font-bold font-heading rounded-xl shadow-md shadow-saffron-500/20 transition-all flex items-center justify-center gap-1.5"
+            className="flex-1 py-2 px-3 royal-gold-gradient hover:opacity-95 text-navy-950 text-xs font-heading font-extrabold rounded-xl shadow-md shadow-gold-500/20 transition-all flex items-center justify-center gap-1.5"
           >
             <span>View Timeline</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -146,7 +147,7 @@ export default function TripCard({ trip, onOpenPdf }) {
 
           <button
             onClick={() => onOpenPdf(trip)}
-            className="p-2 text-slate-600 hover:text-indiaTeal-700 hover:bg-indiaTeal-50 rounded-xl transition-colors border border-sand-200"
+            className="p-2 text-slate-600 hover:text-navy-900 hover:bg-sand-100 rounded-xl transition-colors border border-sand-200"
             title="Export Voucher"
           >
             <FileText className="w-4 h-4" />
@@ -166,9 +167,9 @@ export default function TripCard({ trip, onOpenPdf }) {
 
       {/* Delete Confirmation Modal */}
       {showDeleteConfirm && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-950/60 backdrop-blur-sm animate-fade-in">
           <div className="bg-white max-w-sm w-full p-6 rounded-3xl shadow-2xl border border-sand-200 space-y-4">
-            <h4 className="text-base font-bold font-heading text-slate-900">
+            <h4 className="text-base font-bold font-heading text-navy-950">
               Delete Itinerary?
             </h4>
             <p className="text-xs text-slate-600 leading-relaxed">
@@ -183,7 +184,6 @@ export default function TripCard({ trip, onOpenPdf }) {
               </button>
               <button
                 onClick={() => {
-                  // TODO: API Endpoint - DELETE /api/v1/trips/:id
                   deleteTrip(trip.id);
                   setShowDeleteConfirm(false);
                 }}
