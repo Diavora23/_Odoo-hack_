@@ -1,0 +1,1963 @@
+{
+  "users": [
+    {
+      "id": "usr-101",
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma@traveler.in",
+      "password": "India@2026!",
+      "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80",
+      "travelStyle": "Balanced Explorer",
+      "memberSince": "2025",
+      "tripsCompleted": 4,
+      "loyaltyPoints": 3450,
+      "createdAt": "2026-08-22T09:05:52.757Z",
+      "updatedAt": "2026-08-22T09:05:52.757Z"
+    }
+  ],
+  "trips": [
+    {
+      "id": "trip-agra-past",
+      "cityId": "agra",
+      "cityName": "Agra",
+      "state": "Uttar Pradesh",
+      "tripTitle": "Mughal Splendors & Taj Sunrise",
+      "coverImage": "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=80",
+      "status": "past",
+      "startDate": "2026-06-12",
+      "endDate": "2026-06-14",
+      "durationDays": 3,
+      "travelers": 2,
+      "planType": "budget",
+      "planName": "Golden Triangle Taj Express",
+      "hotel": {
+        "name": "Joey's Taj View Hostel",
+        "pricePerNight": 800,
+        "totalHotelCost": 1600
+      },
+      "totalBudget": 8900,
+      "spentBudget": 8650,
+      "days": [
+        {
+          "dayNumber": 1,
+          "date": "2026-06-12",
+          "theme": "Taj Mahal Dawn",
+          "activities": [
+            {
+              "id": "a-act-1",
+              "title": "Taj Mahal Sunrise Ticket",
+              "time": "05:45 AM",
+              "cost": 1000,
+              "category": "Sightseeing",
+              "icon": "Landmark",
+              "notes": "Sunrise golden light"
+            },
+            {
+              "id": "a-act-2",
+              "title": "Bedai & Jalebi Breakfast",
+              "time": "09:00 AM",
+              "cost": 260,
+              "category": "Food",
+              "icon": "Utensils",
+              "notes": "Local morning breakfast"
+            },
+            {
+              "id": "a-act-3",
+              "title": "Agra Fort Guided Tour",
+              "time": "11:30 AM",
+              "cost": 700,
+              "category": "Heritage",
+              "icon": "Shield",
+              "notes": "Akbar's magnificent fort"
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-08-22T09:05:52.766Z",
+      "updatedAt": "2026-08-22T09:05:52.766Z"
+    },
+    {
+      "id": "trip-kerala-upcoming",
+      "cityId": "kerala",
+      "cityName": "Kerala (Munnar & Alleppey)",
+      "state": "Kerala",
+      "tripTitle": "Backwaters & Mist-Clad Tea Trails",
+      "coverImage": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80",
+      "status": "upcoming",
+      "startDate": "2026-09-10",
+      "endDate": "2026-09-15",
+      "durationDays": 6,
+      "travelers": 4,
+      "planType": "balanced",
+      "planName": "Lush Hills & Houseboat Classic",
+      "hotel": {
+        "name": "Blanket Resort Munnar & Alleppey AC Houseboat",
+        "pricePerNight": 6200,
+        "totalHotelCost": 31000
+      },
+      "totalBudget": 62400,
+      "spentBudget": 0,
+      "days": [
+        {
+          "dayNumber": 1,
+          "date": "2026-09-10",
+          "theme": "Scenic Drive to Munnar Tea Country",
+          "activities": [
+            {
+              "id": "k-act-1",
+              "title": "Kochi to Munnar Mountain Drive via Cheeyappara Falls",
+              "time": "09:00 AM",
+              "cost": 2500,
+              "category": "Transport",
+              "icon": "Car",
+              "notes": "Picturesque waterfalls along the ghats"
+            },
+            {
+              "id": "k-act-2",
+              "title": "Check-in at Blanket Resort",
+              "time": "01:30 PM",
+              "cost": 0,
+              "category": "Stay",
+              "icon": "Hotel",
+              "notes": "Balcony overlooking Attukad waterfall"
+            },
+            {
+              "id": "k-act-3",
+              "title": "Tea Museum & Tasting Session",
+              "time": "04:00 PM",
+              "cost": 800,
+              "category": "Culture",
+              "icon": "Coffee",
+              "notes": "Learn CTC processing & blend tasting"
+            }
+          ]
+        },
+        {
+          "dayNumber": 2,
+          "date": "2026-09-11",
+          "theme": "Clouds of Kolukkumalai",
+          "activities": [
+            {
+              "id": "k-act-4",
+              "title": "Kolukkumalai Sunrise 4x4 Jeep Safari",
+              "time": "04:30 AM",
+              "cost": 3600,
+              "category": "Adventure",
+              "icon": "Sunrise",
+              "notes": "Highest organic tea garden in the world"
+            },
+            {
+              "id": "k-act-5",
+              "title": "Appam & Veg Stew Breakfast",
+              "time": "09:30 AM",
+              "cost": 720,
+              "category": "Food",
+              "icon": "Utensils",
+              "notes": "Traditional Kerala breakfast"
+            },
+            {
+              "id": "k-act-6",
+              "title": "Eravikulam National Park Safari",
+              "time": "02:00 PM",
+              "cost": 1600,
+              "category": "Nature",
+              "icon": "Trees",
+              "notes": "Spot the endangered Nilgiri Tahr"
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-08-22T09:05:52.764Z",
+      "updatedAt": "2026-08-22T09:05:52.764Z"
+    },
+    {
+      "id": "trip-jaipur-ongoing",
+      "cityId": "jaipur",
+      "cityName": "Jaipur",
+      "state": "Rajasthan",
+      "tripTitle": "Royal Heritage Odyssey",
+      "coverImage": "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80",
+      "status": "ongoing",
+      "startDate": "2026-08-21",
+      "endDate": "2026-08-25",
+      "durationDays": 5,
+      "travelers": 2,
+      "planType": "balanced",
+      "planName": "Royal Heritage Explorer",
+      "hotel": {
+        "name": "Alsisar Haveli Heritage",
+        "pricePerNight": 4200,
+        "totalHotelCost": 16800
+      },
+      "totalBudget": 34500,
+      "spentBudget": 14200,
+      "days": [
+        {
+          "dayNumber": 1,
+          "date": "2026-08-21",
+          "theme": "Arrival & The Grand Forts",
+          "activities": [
+            {
+              "id": "act-1",
+              "title": "Check-in at Alsisar Haveli",
+              "time": "11:00 AM",
+              "cost": 0,
+              "category": "Stay",
+              "icon": "Hotel",
+              "notes": "Welcome drink with traditional garland"
+            },
+            {
+              "id": "act-2",
+              "title": "Amber Fort & Palace Tour",
+              "time": "02:00 PM",
+              "cost": 1000,
+              "category": "Sightseeing",
+              "icon": "Landmark",
+              "notes": "Audio guide through Sheesh Mahal"
+            },
+            {
+              "id": "act-3",
+              "title": "Nahargarh Fort Sunset Point",
+              "time": "05:30 PM",
+              "cost": 600,
+              "category": "Adventure",
+              "icon": "Sunset",
+              "notes": "Sunset views over Pink City"
+            },
+            {
+              "id": "act-4",
+              "title": "Royal Dal Baati Churma Dinner at LMB",
+              "time": "08:00 PM",
+              "cost": 1300,
+              "category": "Food",
+              "icon": "Utensils",
+              "notes": "Traditional thali feast"
+            }
+          ]
+        },
+        {
+          "dayNumber": 2,
+          "date": "2026-08-22",
+          "theme": "City Center Palaces & Astronomy",
+          "activities": [
+            {
+              "id": "act-5",
+              "title": "Pyaaz Kachori Breakfast at Rawat",
+              "time": "08:30 AM",
+              "cost": 360,
+              "category": "Food",
+              "icon": "Coffee",
+              "notes": "Crispy kachori with kulhad tea"
+            },
+            {
+              "id": "act-6",
+              "title": "Hawa Mahal Photography Session",
+              "time": "10:00 AM",
+              "cost": 400,
+              "category": "Sightseeing",
+              "icon": "Camera",
+              "notes": "Morning light captures from Wind View Cafe"
+            },
+            {
+              "id": "act-7",
+              "title": "City Palace & Jantar Mantar",
+              "time": "01:30 PM",
+              "cost": 1400,
+              "category": "Culture",
+              "icon": "Compass",
+              "notes": "UNESCO World Heritage sun dials"
+            },
+            {
+              "id": "act-8",
+              "title": "Bapu Bazaar Textile & Mojari Walk",
+              "time": "05:00 PM",
+              "cost": 0,
+              "category": "Shopping",
+              "icon": "ShoppingBag",
+              "notes": "Handicrafts & Jaipuri quilts"
+            }
+          ]
+        },
+        {
+          "dayNumber": 3,
+          "date": "2026-08-23",
+          "theme": "Artisans & Royal Dining",
+          "activities": [
+            {
+              "id": "act-9",
+              "title": "Bagru Block Printing Workshop",
+              "time": "09:30 AM",
+              "cost": 1200,
+              "category": "Culture",
+              "icon": "Sparkles",
+              "notes": "Create custom indigo block print scarf"
+            },
+            {
+              "id": "act-10",
+              "title": "Jaigarh Fort & Jaivana Cannon",
+              "time": "02:30 PM",
+              "cost": 500,
+              "category": "Sightseeing",
+              "icon": "Shield",
+              "notes": "World's largest wheeled cannon"
+            },
+            {
+              "id": "act-11",
+              "title": "Laal Maas Feast at Handi",
+              "time": "08:00 PM",
+              "cost": 1900,
+              "category": "Food",
+              "icon": "Utensils",
+              "notes": "Signature Rajasthani specialty"
+            }
+          ]
+        },
+        {
+          "dayNumber": 4,
+          "date": "2026-08-24",
+          "theme": "Stepwells & Cultural Night",
+          "activities": [
+            {
+              "id": "act-12",
+              "title": "Panna Meena Ka Kund Stepwell",
+              "time": "08:00 AM",
+              "cost": 0,
+              "category": "Sightseeing",
+              "icon": "Camera",
+              "notes": "Geometric 16th century stepwell"
+            },
+            {
+              "id": "act-13",
+              "title": "Albert Hall Museum & Pigeon Square",
+              "time": "11:30 AM",
+              "cost": 600,
+              "category": "Culture",
+              "icon": "Landmark",
+              "notes": "Indo-Saracenic museum architecture"
+            },
+            {
+              "id": "act-14",
+              "title": "Chokhi Dhani Ethnic Resort & Folk Show",
+              "time": "06:00 PM",
+              "cost": 2400,
+              "category": "Culture",
+              "icon": "Sparkles",
+              "notes": "Puppetry, fire dancers, and village feast"
+            }
+          ]
+        },
+        {
+          "dayNumber": 5,
+          "date": "2026-08-25",
+          "theme": "Souvenirs & Departure",
+          "activities": [
+            {
+              "id": "act-15",
+              "title": "Mawa Ghevar Tasting at Gulab Ji",
+              "time": "09:00 AM",
+              "cost": 280,
+              "category": "Food",
+              "icon": "Coffee",
+              "notes": "Sweet farewell snack"
+            },
+            {
+              "id": "act-16",
+              "title": "Blue Pottery Studio Visit",
+              "time": "10:30 AM",
+              "cost": 800,
+              "category": "Shopping",
+              "icon": "ShoppingBag",
+              "notes": "Pick up hand-painted vases"
+            },
+            {
+              "id": "act-17",
+              "title": "Airport / Station Transfer",
+              "time": "02:00 PM",
+              "cost": 600,
+              "category": "Transport",
+              "icon": "Car",
+              "notes": "Departure from Jaipur"
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-08-22T09:05:52.761Z",
+      "updatedAt": "2026-08-22T09:05:52.761Z"
+    }
+  ],
+  "community_trips": [
+    {
+      "id": "comm-6",
+      "tripTitle": "3 Days Agra & Fatehpur Sikri Mughal Architecture Tour",
+      "cityId": "agra",
+      "cityName": "Agra",
+      "state": "Uttar Pradesh",
+      "category": "Heritage",
+      "author": {
+        "name": "Tanvi & Siddharth",
+        "handle": "@heritage_duo",
+        "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80",
+        "badge": "Architecture Buffs",
+        "verified": false
+      },
+      "durationDays": 3,
+      "travelers": 2,
+      "totalBudget": 12500,
+      "likes": 295,
+      "forks": 112,
+      "coverImage": "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=80",
+      "tags": [
+        "Taj Sunrise",
+        "Fatehpur Sikri",
+        "Agra Fort",
+        "Mughlai Food"
+      ],
+      "summary": "Beat the crowds at Taj Mahal sunrise, explore Akbar's preserved red city of Fatehpur Sikri, and sample famous Agra petha.",
+      "hotelTier": "Colonial Boutique (₹3,800/night)",
+      "highlights": [
+        "Taj Mahal East Gate Sunrise",
+        "Buland Darwaza Fatehpur Sikri",
+        "Mehtab Bagh Reflection View",
+        "Mughlai Dum Biryani"
+      ],
+      "sampleDaysCount": 3,
+      "createdAt": "2026-08-22T09:05:52.780Z",
+      "updatedAt": "2026-08-22T09:05:52.780Z"
+    },
+    {
+      "id": "comm-5",
+      "tripTitle": "5 Days Kerala Backwater Serenity & Munnar Tea Trek",
+      "cityId": "kerala",
+      "cityName": "Kerala (Munnar & Alleppey)",
+      "state": "Kerala",
+      "category": "Nature",
+      "author": {
+        "name": "Rahul Menon",
+        "handle": "@malabar_trails",
+        "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80",
+        "badge": "Eco Naturalist",
+        "verified": true
+      },
+      "durationDays": 5,
+      "travelers": 4,
+      "totalBudget": 42000,
+      "likes": 476,
+      "forks": 198,
+      "coverImage": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80",
+      "tags": [
+        "Houseboat",
+        "Munnar Tea",
+        "Kathakali",
+        "Sadhya"
+      ],
+      "summary": "Overnight private houseboat through Alleppey lagoons with onboard chef, Kolukkumalai sunrise jeep trek, and Kathakali show.",
+      "hotelTier": "Tea Resort & AC Houseboat (₹6,000/night)",
+      "highlights": [
+        "Overnight Houseboat in Alleppey",
+        "Kolukkumalai Sunrise 4x4",
+        "Kerala Sadhya 24-dish Feast",
+        "Eravikulam Park"
+      ],
+      "sampleDaysCount": 5,
+      "createdAt": "2026-08-22T09:05:52.778Z",
+      "updatedAt": "2026-08-22T09:05:52.778Z"
+    },
+    {
+      "id": "comm-4",
+      "tripTitle": "6 Days Manali Snow Trails, Atal Tunnel & Old Cafes",
+      "cityId": "manali",
+      "cityName": "Manali",
+      "state": "Himachal Pradesh",
+      "category": "Mountains",
+      "author": {
+        "name": "Sneha Kapoor",
+        "handle": "@himalayan_hues",
+        "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=120&q=80",
+        "badge": "Alpine Trekker",
+        "verified": true
+      },
+      "durationDays": 6,
+      "travelers": 2,
+      "totalBudget": 28500,
+      "likes": 540,
+      "forks": 215,
+      "coverImage": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&q=80",
+      "tags": [
+        "Solang Snow",
+        "Paragliding",
+        "Old Manali",
+        "Riverside"
+      ],
+      "summary": "Crisp pine air, high-altitude paragliding in Solang, wood-fired pizza at Cafe 1947, and scenic drive through Atal Tunnel.",
+      "hotelTier": "Pine Wood Chalet (₹4,800/night)",
+      "highlights": [
+        "Atal Tunnel Lahaul Excursion",
+        "Solang Paragliding",
+        "Jogini Waterfall Hike",
+        "Trout Fish Dining"
+      ],
+      "sampleDaysCount": 6,
+      "createdAt": "2026-08-22T09:05:52.775Z",
+      "updatedAt": "2026-08-22T09:05:52.775Z"
+    },
+    {
+      "id": "comm-3",
+      "tripTitle": "4 Days Varanasi Spiritual Light & Sacred Ghats",
+      "cityId": "varanasi",
+      "cityName": "Varanasi",
+      "state": "Uttar Pradesh",
+      "category": "Spiritual",
+      "author": {
+        "name": "Raghavan Iyer",
+        "handle": "@kashi_chronicles",
+        "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80",
+        "badge": "Spiritual Guide",
+        "verified": true
+      },
+      "durationDays": 4,
+      "travelers": 2,
+      "totalBudget": 14800,
+      "likes": 389,
+      "forks": 142,
+      "coverImage": "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=800&q=80",
+      "tags": [
+        "Ganga Aarti",
+        "Assi Ghat",
+        "Sarnath",
+        "Silk Alley"
+      ],
+      "summary": "Early morning boat ceremonies, Dashashwamedh aarti VIP seating, Sarnath monastic tranquility, and Banarasi street food.",
+      "hotelTier": "Ghat-Facing Haveli (₹3,800/night)",
+      "highlights": [
+        "Subah-e-Banaras Dawn Boat",
+        "Ganga Aarti Front Row",
+        "Blue Lassi Tasting",
+        "Sarnath Stupa Meditation"
+      ],
+      "sampleDaysCount": 4,
+      "createdAt": "2026-08-22T09:05:52.773Z",
+      "updatedAt": "2026-08-22T09:05:52.773Z"
+    },
+    {
+      "id": "comm-2",
+      "tripTitle": "5 Days Goa Beyond Beaches & Secret Waterfalls",
+      "cityId": "goa",
+      "cityName": "Goa",
+      "state": "Goa",
+      "category": "Beaches",
+      "author": {
+        "name": "Ananya Deshmukh",
+        "handle": "@ananya_wanderlust",
+        "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80",
+        "badge": "Coastal Explorer",
+        "verified": true
+      },
+      "durationDays": 5,
+      "travelers": 3,
+      "totalBudget": 24600,
+      "likes": 612,
+      "forks": 289,
+      "coverImage": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=800&q=80",
+      "tags": [
+        "Waterfalls",
+        "Fontainhas",
+        "Beach Shacks",
+        "Scooter"
+      ],
+      "summary": "Skip the tourist traps! An insider's guide to South Goa's quietest coves, Dudhsagar trekking, and Latin quarter bakeries.",
+      "hotelTier": "Portuguese Villa (₹4,200/night)",
+      "highlights": [
+        "Butterfly Beach Boat Ride",
+        "Dudhsagar Jeep Safari",
+        "Fontainhas Heritage Walk",
+        "Mum's Kitchen Balchão"
+      ],
+      "sampleDaysCount": 5,
+      "createdAt": "2026-08-22T09:05:52.771Z",
+      "updatedAt": "2026-08-22T09:05:52.771Z"
+    },
+    {
+      "id": "comm-1",
+      "tripTitle": "7 Days Royal Rajasthan Forts & Havelis",
+      "cityId": "jaipur",
+      "cityName": "Jaipur",
+      "state": "Rajasthan",
+      "category": "Heritage",
+      "author": {
+        "name": "Vikramaditya Rathore",
+        "handle": "@vikram_travels",
+        "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80",
+        "badge": "Heritage Expert",
+        "verified": true
+      },
+      "durationDays": 7,
+      "travelers": 2,
+      "totalBudget": 38500,
+      "likes": 428,
+      "forks": 156,
+      "coverImage": "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80",
+      "tags": [
+        "Palaces",
+        "Royal Cuisine",
+        "Bazaars",
+        "Forts"
+      ],
+      "summary": "Complete deep-dive into Jaipur's hidden havelis, stepwells, and royal thali dining with sunset hilltop fort viewpoints.",
+      "hotelTier": "Heritage Haveli (₹4,500/night)",
+      "highlights": [
+        "Amber Fort Sheesh Mahal",
+        "Chokhi Dhani Folk Evening",
+        "Nahargarh Sunset",
+        "Indigo Block Printing"
+      ],
+      "sampleDaysCount": 7,
+      "createdAt": "2026-08-22T09:05:52.769Z",
+      "updatedAt": "2026-08-22T09:05:52.769Z"
+    }
+  ],
+  "cities": [
+    {
+      "id": "agra",
+      "name": "Agra",
+      "state": "Uttar Pradesh",
+      "nickname": "City of the Taj",
+      "tagline": "The immortal monument of love, massive Mughal citadels, and Persian gardens",
+      "category": "Heritage",
+      "heroImage": "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=80",
+      "rating": 4.8,
+      "reviewCount": 5120,
+      "startingPrice": 3100,
+      "bestTimeToVisit": "October to March",
+      "coordinates": {
+        "lat": 27.1767,
+        "lng": 78.0081
+      },
+      "weather": {
+        "temp": "27°C",
+        "condition": "Clear & Sunny",
+        "humidity": "44%",
+        "icon": "Sun",
+        "forecast": [
+          {
+            "day": "Day 1",
+            "temp": "27°C / 15°C",
+            "condition": "Crisp Sunrise",
+            "icon": "Sun"
+          },
+          {
+            "day": "Day 2",
+            "temp": "28°C / 16°C",
+            "condition": "Warm & Clear",
+            "icon": "Sun"
+          },
+          {
+            "day": "Day 3",
+            "temp": "26°C / 14°C",
+            "condition": "Pleasant",
+            "icon": "Sun"
+          },
+          {
+            "day": "Day 4",
+            "temp": "27°C / 15°C",
+            "condition": "Sunny",
+            "icon": "Sun"
+          },
+          {
+            "day": "Day 5",
+            "temp": "28°C / 16°C",
+            "condition": "Clear Sky",
+            "icon": "Sun"
+          }
+        ],
+        "tip": "Enter the Taj Mahal through the East Gate right at dawn (05:45 AM) to witness the white marble turn pearlescent pink without crowds."
+      },
+      "hotelTiers": {
+        "budget": {
+          "name": "Joey's Hostel Taj View / Bedweiser",
+          "pricePerNight": 800,
+          "type": "Taj-View Hostel"
+        },
+        "balanced": {
+          "name": "ITC Mughal / Crystal Sarovar Premiere",
+          "pricePerNight": 4500,
+          "type": "Mughal Architecture Hotel"
+        },
+        "luxury": {
+          "name": "The Oberoi Amarvilas",
+          "pricePerNight": 38000,
+          "type": "Unobstructed Taj View Palace"
+        },
+        "cultural": {
+          "name": "Grand Imperial Heritage Hotel (1905)",
+          "pricePerNight": 3900,
+          "type": "Colonial Heritage Manor"
+        }
+      },
+      "topAttractions": [
+        {
+          "id": "a1",
+          "name": "Taj Mahal Sunrise Visit",
+          "timing": "05:45 AM - 09:30 AM",
+          "cost": 500,
+          "category": "Sightseeing",
+          "icon": "Landmark",
+          "desc": "UNESCO wonder of the world built by Shah Jahan in white Makrana marble."
+        },
+        {
+          "id": "a2",
+          "name": "Agra Fort (Red Sandstone Citadel)",
+          "timing": "10:30 AM - 01:30 PM",
+          "cost": 350,
+          "category": "Heritage",
+          "icon": "Shield",
+          "desc": "Massive Mughal fortress with Jahangiri Mahal and Diwan-i-Khas."
+        },
+        {
+          "id": "a3",
+          "name": "Mehtab Bagh Moonlight River Garden",
+          "timing": "04:30 PM - 06:45 PM",
+          "cost": 200,
+          "category": "Nature",
+          "icon": "Sunset",
+          "desc": "Serene garden across the Yamuna with sunset reflection of the Taj."
+        },
+        {
+          "id": "a4",
+          "name": "Fatehpur Sikri Imperial Ghost City",
+          "timing": "08:30 AM - 02:00 PM",
+          "cost": 450,
+          "category": "Heritage",
+          "icon": "Compass",
+          "desc": "Akbar's 16th-century fortified capital and the soaring Buland Darwaza."
+        },
+        {
+          "id": "a5",
+          "name": "Tomb of I'timad-ud-Daulah (Baby Taj)",
+          "timing": "02:30 PM - 04:30 PM",
+          "cost": 250,
+          "category": "Culture",
+          "icon": "Camera",
+          "desc": "Exquisite marble inlay pioneer on the banks of Yamuna."
+        }
+      ],
+      "foodRecommendations": [
+        {
+          "id": "af1",
+          "name": "Agra Petha Tasting (Kesar, Paan, Angoori)",
+          "spot": "Panchi Petha, Sadar Bazaar",
+          "cost": 200,
+          "meal": "Dessert"
+        },
+        {
+          "id": "af2",
+          "name": "Bedai & Spicy Aloo with Jalebi",
+          "spot": "Deviram Sweets & Restaurant",
+          "cost": 130,
+          "meal": "Breakfast"
+        },
+        {
+          "id": "af3",
+          "name": "Mughlai Dum Biryani & Galouti Kebab",
+          "spot": "Peshawri, ITC Mughal",
+          "cost": 1250,
+          "meal": "Dinner"
+        },
+        {
+          "id": "af4",
+          "name": "Tandoori Chaat & Gol Gappe",
+          "spot": "Sadar Bazaar Chaat Gali",
+          "cost": 150,
+          "meal": "Snack"
+        }
+      ],
+      "plans": [
+        {
+          "id": "agra-budget",
+          "type": "budget",
+          "title": "Golden Triangle Taj Express",
+          "badge": "Weekend Friendly",
+          "stayTier": "Taj-View Backpacker Hostel",
+          "estCostPerDay": 1750,
+          "highlight": "Early sunrise Taj pass, Agra fort walk, street petha tasting",
+          "defaultDays": 2
+        },
+        {
+          "id": "agra-balanced",
+          "type": "balanced",
+          "title": "Mughal Imperial Heritage",
+          "badge": "Comprehensive Tour",
+          "stayTier": "ITC Mughal / Boutique Hotel",
+          "estCostPerDay": 4900,
+          "highlight": "Private AC sedan, Fatehpur Sikri guided excursion, Mehtab Bagh sunset",
+          "defaultDays": 3
+        },
+        {
+          "id": "agra-luxury",
+          "type": "luxury",
+          "title": "Oberoi Amarvilas Royal Retreat",
+          "badge": "Pure Unrivaled Luxury",
+          "stayTier": "The Oberoi Amarvilas",
+          "estCostPerDay": 39000,
+          "highlight": "Balcony room with direct Taj view, private golf cart entry, candlelit poolside",
+          "defaultDays": 2
+        }
+      ],
+      "createdAt": "2026-08-22T09:05:52.743Z",
+      "updatedAt": "2026-08-22T09:05:52.743Z"
+    },
+    {
+      "id": "udaipur",
+      "name": "Udaipur",
+      "state": "Rajasthan",
+      "nickname": "City of Lakes & Venice of the East",
+      "tagline": "Romantic shimmering lakes, white marble palaces, and sunset boat serenades",
+      "category": "Heritage",
+      "heroImage": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80",
+      "rating": 4.9,
+      "reviewCount": 3150,
+      "startingPrice": 4800,
+      "bestTimeToVisit": "September to March",
+      "coordinates": {
+        "lat": 24.5854,
+        "lng": 73.7125
+      },
+      "weather": {
+        "temp": "29°C",
+        "condition": "Sunny & Gentle Breeze",
+        "humidity": "40%",
+        "icon": "Sun",
+        "forecast": [
+          {
+            "day": "Day 1",
+            "temp": "29°C / 16°C",
+            "condition": "Bright Sun",
+            "icon": "Sun"
+          },
+          {
+            "day": "Day 2",
+            "temp": "28°C / 15°C",
+            "condition": "Gentle Lake Breeze",
+            "icon": "Wind"
+          },
+          {
+            "day": "Day 3",
+            "temp": "30°C / 17°C",
+            "condition": "Clear Sky",
+            "icon": "Sun"
+          },
+          {
+            "day": "Day 4",
+            "temp": "29°C / 16°C",
+            "condition": "Sunny",
+            "icon": "Sun"
+          },
+          {
+            "day": "Day 5",
+            "temp": "28°C / 15°C",
+            "condition": "Pleasant",
+            "icon": "Sun"
+          }
+        ],
+        "tip": "Dine at a rooftop restaurant overlooking Lake Pichola and the lit-up City Palace at night."
+      },
+      "hotelTiers": {
+        "budget": {
+          "name": "Zostel Udaipur / Moustache Lake Pichola",
+          "pricePerNight": 900,
+          "type": "Lakeside Hostel"
+        },
+        "balanced": {
+          "name": "Jagat Niwas Palace / Amet Haveli",
+          "pricePerNight": 5200,
+          "type": "Lake-Facing Haveli"
+        },
+        "luxury": {
+          "name": "Taj Lake Palace / The Leela Palace Udaipur",
+          "pricePerNight": 36000,
+          "type": "Iconic Island Palace"
+        },
+        "cultural": {
+          "name": "Fateh Garh Heritage Palace",
+          "pricePerNight": 6800,
+          "type": "Hilltop Heritage"
+        }
+      },
+      "topAttractions": [
+        {
+          "id": "u1",
+          "name": "City Palace Complex & Crystal Gallery",
+          "timing": "09:30 AM - 01:30 PM",
+          "cost": 650,
+          "category": "Heritage",
+          "icon": "Landmark",
+          "desc": "Rajasthan's largest royal palace complex overlooking Lake Pichola."
+        },
+        {
+          "id": "u2",
+          "name": "Sunset Boat Cruise on Lake Pichola to Jagmandir",
+          "timing": "05:00 PM - 06:45 PM",
+          "cost": 950,
+          "category": "Culture",
+          "icon": "Ship",
+          "desc": "Golden hour boat ride visiting the island palace with peacock gardens."
+        },
+        {
+          "id": "u3",
+          "name": "Bagore Ki Haveli Dharohar Folk Dance",
+          "timing": "07:00 PM - 08:15 PM",
+          "cost": 250,
+          "category": "Culture",
+          "icon": "Sparkles",
+          "desc": "Mesmerizing Rajasthani folk dances, puppetry, and brass pot balancing."
+        },
+        {
+          "id": "u4",
+          "name": "Monsoon Palace (Sajjangarh) Hilltop",
+          "timing": "03:30 PM - 06:00 PM",
+          "cost": 350,
+          "category": "Sightseeing",
+          "icon": "Sunset",
+          "desc": "Hilltop fortress offering 360-degree panorama of the Aravalli hills."
+        },
+        {
+          "id": "u5",
+          "name": "Saheliyon Ki Bari & Vintage Car Museum",
+          "timing": "10:30 AM - 01:00 PM",
+          "cost": 400,
+          "category": "Culture",
+          "icon": "Camera",
+          "desc": "Royal maidens' garden with lotus pools, marble fountains, and classic cars."
+        }
+      ],
+      "foodRecommendations": [
+        {
+          "id": "uf1",
+          "name": "Mewari Laal Maas & Bajra Roti",
+          "spot": "Ambrai Restaurant, Amet Haveli",
+          "cost": 950,
+          "meal": "Dinner"
+        },
+        {
+          "id": "uf2",
+          "name": "Rajasthani Poha & Jalebi with Kulhad Chai",
+          "spot": "Sai Baba Nashta Corner",
+          "cost": 120,
+          "meal": "Breakfast"
+        },
+        {
+          "id": "uf3",
+          "name": "Traditional Gatte Ki Sabzi Thali",
+          "spot": "Natraj Dining Hall",
+          "cost": 350,
+          "meal": "Lunch"
+        },
+        {
+          "id": "uf4",
+          "name": "Cold Coffee & Walnut Brownie with Lake View",
+          "spot": "Jheel's Ginger Coffee Bar",
+          "cost": 280,
+          "meal": "Snack"
+        }
+      ],
+      "plans": [
+        {
+          "id": "udaipur-budget",
+          "type": "budget",
+          "title": "Lakeside Backpacker & Sunset Vistas",
+          "badge": "Romantic Budget",
+          "stayTier": "Ghat-side hostel / Homestay",
+          "estCostPerDay": 2000,
+          "highlight": "Ghat walks, folk dance show, shared boat ride, rooftop sunset meals",
+          "defaultDays": 3
+        },
+        {
+          "id": "udaipur-balanced",
+          "type": "balanced",
+          "title": "Venice of the East Heritage Tour",
+          "badge": "Top Choice for Couples",
+          "stayTier": "Lake-Facing Heritage Haveli",
+          "estCostPerDay": 5900,
+          "highlight": "Private Jagmandir boat cruise, City Palace audio guide, Ambrai dinner",
+          "defaultDays": 4
+        },
+        {
+          "id": "udaipur-luxury",
+          "type": "luxury",
+          "title": "Taj Lake Palace Royal Romance",
+          "badge": "World Class Luxury",
+          "stayTier": "Taj Lake Palace / The Leela",
+          "estCostPerDay": 38500,
+          "highlight": "Private royal barge arrival, butler service, private rooftop heritage dining",
+          "defaultDays": 4
+        }
+      ],
+      "createdAt": "2026-08-22T09:05:52.730Z",
+      "updatedAt": "2026-08-22T09:05:52.730Z"
+    },
+    {
+      "id": "kerala",
+      "name": "Kerala (Munnar & Alleppey)",
+      "state": "Kerala",
+      "nickname": "God's Own Country",
+      "tagline": "Emerald tea plantations, tranquil backwater houseboats, and ayurvedic serenity",
+      "category": "Nature",
+      "heroImage": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=80",
+      "rating": 4.9,
+      "reviewCount": 4670,
+      "startingPrice": 4500,
+      "bestTimeToVisit": "September to March",
+      "coordinates": {
+        "lat": 9.9312,
+        "lng": 76.2673
+      },
+      "weather": {
+        "temp": "27°C",
+        "condition": "Lush & Breezy",
+        "humidity": "72%",
+        "icon": "CloudRain",
+        "forecast": [
+          {
+            "day": "Day 1",
+            "temp": "27°C / 20°C",
+            "condition": "Pleasant Breeze",
+            "icon": "Wind"
+          },
+          {
+            "day": "Day 2",
+            "temp": "28°C / 19°C",
+            "condition": "Warm Sun",
+            "icon": "Sun"
+          },
+          {
+            "day": "Day 3",
+            "temp": "26°C / 18°C",
+            "condition": "Light Mist",
+            "icon": "CloudSun"
+          },
+          {
+            "day": "Day 4",
+            "temp": "27°C / 20°C",
+            "condition": "Emerald Skies",
+            "icon": "Sun"
+          },
+          {
+            "day": "Day 5",
+            "temp": "26°C / 19°C",
+            "condition": "Tropical Warmth",
+            "icon": "Sun"
+          }
+        ],
+        "tip": "Book an overnight private Kettuvallam (houseboat) in Alleppey with an onboard chef for freshly caught Pearl Spot fish."
+      },
+      "hotelTiers": {
+        "budget": {
+          "name": "Zostel Munnar / Venice Homestay Alleppey",
+          "pricePerNight": 950,
+          "type": "Backwater Homestay"
+        },
+        "balanced": {
+          "name": "Fragrant Nature / Blanket Resort Munnar",
+          "pricePerNight": 5800,
+          "type": "Tea Plantation Resort"
+        },
+        "luxury": {
+          "name": "Kumarakom Lake Resort / Oberoi Vrinda Houseboat",
+          "pricePerNight": 31000,
+          "type": "5-Star Backwater Luxury"
+        },
+        "cultural": {
+          "name": "Spice Village Eco Sanctuary",
+          "pricePerNight": 6200,
+          "type": "Ayurvedic Heritage Village"
+        }
+      },
+      "topAttractions": [
+        {
+          "id": "k1",
+          "name": "Alleppey Backwaters Private Houseboat Cruise",
+          "timing": "12:00 PM - 06:00 PM",
+          "cost": 4500,
+          "category": "Nature",
+          "icon": "Ship",
+          "desc": "Float past paddy fields, coconut palms, and village waterways."
+        },
+        {
+          "id": "k2",
+          "name": "Kolukkumalai Sunrise 4x4 Jeep Trek",
+          "timing": "04:30 AM - 09:30 AM",
+          "cost": 1800,
+          "category": "Adventure",
+          "icon": "Sunrise",
+          "desc": "World's highest tea plantation with sea-of-clouds sunrise."
+        },
+        {
+          "id": "k3",
+          "name": "Eravikulam National Park (Nilgiri Tahr)",
+          "timing": "09:00 AM - 01:00 PM",
+          "cost": 400,
+          "category": "Nature",
+          "icon": "Trees",
+          "desc": "Habitat of the endangered mountain goat and rolling tea hills."
+        },
+        {
+          "id": "k4",
+          "name": "Kathakali & Kalaripayattu Martial Arts Show",
+          "timing": "06:00 PM - 08:00 PM",
+          "cost": 500,
+          "category": "Culture",
+          "icon": "Sparkles",
+          "desc": "Ancient classical dance-drama and 3000-year-old warrior art."
+        },
+        {
+          "id": "k5",
+          "name": "Periyar Spice Plantation & Elephant Trail",
+          "timing": "02:00 PM - 05:00 PM",
+          "cost": 600,
+          "category": "Culture",
+          "icon": "Coffee",
+          "desc": "Learn about cardamom, cloves, cinnamon, and pepper cultivation."
+        }
+      ],
+      "foodRecommendations": [
+        {
+          "id": "kf1",
+          "name": "Kerala Sadhya Thali on Banana Leaf (24 dishes)",
+          "spot": "Mothers Veg Plaza / Local Toddy Shop",
+          "cost": 450,
+          "meal": "Lunch"
+        },
+        {
+          "id": "kf2",
+          "name": "Karimeen Pollichathu (Pearl Spot in banana leaf)",
+          "spot": "Alleppey Backwater Kitchen",
+          "cost": 680,
+          "meal": "Dinner"
+        },
+        {
+          "id": "kf3",
+          "name": "Flaky Malabar Parotta with Beef/Veg Curry",
+          "spot": "Paragon Restaurant",
+          "cost": 320,
+          "meal": "Dinner"
+        },
+        {
+          "id": "kf4",
+          "name": "Appam with Coconut Vegetable Stew",
+          "spot": "Rapsy Restaurant, Munnar",
+          "cost": 180,
+          "meal": "Breakfast"
+        }
+      ],
+      "plans": [
+        {
+          "id": "kerala-budget",
+          "type": "budget",
+          "title": "Backwaters & Tea Trail Solo",
+          "badge": "Eco Explorer",
+          "stayTier": "Shikara boats & Village Homestays",
+          "estCostPerDay": 2200,
+          "highlight": "Shared government ferry cruise, Munnar tea hikes, authentic village sadhya",
+          "defaultDays": 4
+        },
+        {
+          "id": "kerala-balanced",
+          "type": "balanced",
+          "title": "Lush Hills & Houseboat Classic",
+          "badge": "Most Loved Itinerary",
+          "stayTier": "Hilltop Resort & AC Houseboat",
+          "estCostPerDay": 6200,
+          "highlight": "Private AC houseboat with onboard chef, Kolukkumalai sunrise jeep, Kathakali",
+          "defaultDays": 5
+        },
+        {
+          "id": "kerala-luxury",
+          "type": "luxury",
+          "title": "Royal Malabar & Ayurvedic Sanctuary",
+          "badge": "Pure Bliss & Wellness",
+          "stayTier": "Kumarakom Lake Resort",
+          "estCostPerDay": 29000,
+          "highlight": "Private pool villas, bespoke ayurvedic panchakarma, luxury speedboats",
+          "defaultDays": 5
+        }
+      ],
+      "createdAt": "2026-08-22T09:05:52.718Z",
+      "updatedAt": "2026-08-22T09:05:52.718Z"
+    },
+    {
+      "id": "manali",
+      "name": "Manali",
+      "state": "Himachal Pradesh",
+      "nickname": "Valley of the Gods",
+      "tagline": "Snow-capped Himalayan peaks, pine forests, rushing Beas river, and mountain trails",
+      "category": "Mountains",
+      "heroImage": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1200&q=80",
+      "rating": 4.8,
+      "reviewCount": 3810,
+      "startingPrice": 3400,
+      "bestTimeToVisit": "All Year (Snow: Dec-Feb, Greenery: Apr-Jun)",
+      "coordinates": {
+        "lat": 32.2396,
+        "lng": 77.1887
+      },
+      "weather": {
+        "temp": "14°C",
+        "condition": "Crisp Mountain Breeze",
+        "humidity": "55%",
+        "icon": "CloudSnow",
+        "forecast": [
+          {
+            "day": "Day 1",
+            "temp": "14°C / 4°C",
+            "condition": "Sunny & Crisp",
+            "icon": "Sun"
+          },
+          {
+            "day": "Day 2",
+            "temp": "12°C / 2°C",
+            "condition": "Snow Glimpse",
+            "icon": "CloudSnow"
+          },
+          {
+            "day": "Day 3",
+            "temp": "13°C / 3°C",
+            "condition": "Clear Mountain Air",
+            "icon": "Sun"
+          },
+          {
+            "day": "Day 4",
+            "temp": "11°C / 1°C",
+            "condition": "Misty Peaks",
+            "icon": "Cloud"
+          },
+          {
+            "day": "Day 5",
+            "temp": "14°C / 3°C",
+            "condition": "Pleasant Sunshine",
+            "icon": "Sun"
+          }
+        ],
+        "tip": "Carry warm thermals, woolen beanies, and sturdy trekking shoes for Solang Valley."
+      },
+      "hotelTiers": {
+        "budget": {
+          "name": "The Hosteller / Zostel Old Manali",
+          "pricePerNight": 850,
+          "type": "Mountain Backpacker Hostel"
+        },
+        "balanced": {
+          "name": "Larisa Resort / Apple Country Resort",
+          "pricePerNight": 4800,
+          "type": "Pine Chalet & Cottage"
+        },
+        "luxury": {
+          "name": "The Himalayan / Span Resort & Spa",
+          "pricePerNight": 19500,
+          "type": "5-Star Himalayan Castle"
+        },
+        "cultural": {
+          "name": "Naggar Castle Heritage Wing",
+          "pricePerNight": 3600,
+          "type": "Historic Wooden Fortress"
+        }
+      },
+      "topAttractions": [
+        {
+          "id": "m1",
+          "name": "Solang Valley & Atal Tunnel Adventure",
+          "timing": "08:30 AM - 03:00 PM",
+          "cost": 1500,
+          "category": "Adventure",
+          "icon": "Mountain",
+          "desc": "Paragliding, snow scooter, zorbing, and drive into Lahaul valley."
+        },
+        {
+          "id": "m2",
+          "name": "Old Manali Cafes & Cedar Woods Walk",
+          "timing": "03:30 PM - 07:00 PM",
+          "cost": 300,
+          "category": "Culture",
+          "icon": "Coffee",
+          "desc": "Cozy wood-fired pizza spots, live indie music, and apple orchards."
+        },
+        {
+          "id": "m3",
+          "name": "Hadimba Temple & Van Vihar Forest",
+          "timing": "09:30 AM - 12:00 PM",
+          "cost": 150,
+          "category": "Sightseeing",
+          "icon": "Trees",
+          "desc": "450-year-old pagoda-style wooden temple nestled inside giant deodars."
+        },
+        {
+          "id": "m4",
+          "name": "Jogini Waterfall Hike (Vashisht)",
+          "timing": "08:00 AM - 12:30 PM",
+          "cost": 200,
+          "category": "Adventure",
+          "icon": "Footprints",
+          "desc": "Gentle mountain trek offering sweeping views of the Beas Valley."
+        },
+        {
+          "id": "m5",
+          "name": "Naggar Castle & Roerich Art Gallery",
+          "timing": "01:30 PM - 05:00 PM",
+          "cost": 400,
+          "category": "Heritage",
+          "icon": "Landmark",
+          "desc": "Medieval timber fortress with Himalayan panoramic vantage point."
+        }
+      ],
+      "foodRecommendations": [
+        {
+          "id": "mf1",
+          "name": "Traditional Himachali Siddu with Ghee & Dal",
+          "spot": "Chopsticks / Cafe 1947",
+          "cost": 250,
+          "meal": "Lunch"
+        },
+        {
+          "id": "mf2",
+          "name": "Pan-fried Himalayan River Trout",
+          "spot": "Johnson's Cafe & Bar",
+          "cost": 650,
+          "meal": "Dinner"
+        },
+        {
+          "id": "mf3",
+          "name": "Wood-fired Margherita Pizza & Apple Cider",
+          "spot": "Cafe 1947, Old Manali",
+          "cost": 520,
+          "meal": "Dinner"
+        },
+        {
+          "id": "mf4",
+          "name": "Tibetan Momos & Thukpa Soup",
+          "spot": "Dylan's Toasted & Roasted",
+          "cost": 220,
+          "meal": "Snack"
+        }
+      ],
+      "plans": [
+        {
+          "id": "manali-budget",
+          "type": "budget",
+          "title": "Backpacker Trails & Cafe Culture",
+          "badge": "Trekking & Chill",
+          "stayTier": "Old Manali Hostel Dorms",
+          "estCostPerDay": 1950,
+          "highlight": "Local bus travel, waterfall hikes, cafe hopping, bonfire nights",
+          "defaultDays": 4
+        },
+        {
+          "id": "manali-balanced",
+          "type": "balanced",
+          "title": "Alpine Adventure & Chalet Retreat",
+          "badge": "Top Choice for Couples & Families",
+          "stayTier": "Apple Orchard Cottage / Resort",
+          "estCostPerDay": 5400,
+          "highlight": "Private SUV cab, Solang paragliding pass, trout dining, Naggar excursion",
+          "defaultDays": 5
+        },
+        {
+          "id": "manali-luxury",
+          "type": "luxury",
+          "title": "Himalayan Castle & Wellness Luxe",
+          "badge": "Luxury Mountain Living",
+          "stayTier": "The Himalayan Victorian Castle",
+          "estCostPerDay": 22000,
+          "highlight": "Heated infinity pool over peaks, private heli-sightseeing, spa therapy",
+          "defaultDays": 4
+        }
+      ],
+      "createdAt": "2026-08-22T09:05:52.710Z",
+      "updatedAt": "2026-08-22T09:05:52.710Z"
+    },
+    {
+      "id": "varanasi",
+      "name": "Varanasi",
+      "state": "Uttar Pradesh",
+      "nickname": "The City of Light (Kashi)",
+      "tagline": "Sacred ghats on the holy Ganges, mesmerizing evening aartis, and spiritual mystique",
+      "category": "Spiritual",
+      "heroImage": "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=1200&q=80",
+      "rating": 4.9,
+      "reviewCount": 2980,
+      "startingPrice": 2600,
+      "bestTimeToVisit": "October to March",
+      "coordinates": {
+        "lat": 25.3176,
+        "lng": 82.9739
+      },
+      "weather": {
+        "temp": "25°C",
+        "condition": "Cool & Crisp",
+        "humidity": "48%",
+        "icon": "Sun",
+        "forecast": [
+          {
+            "day": "Day 1",
+            "temp": "25°C / 14°C",
+            "condition": "Misty Morning",
+            "icon": "CloudSun"
+          },
+          {
+            "day": "Day 2",
+            "temp": "26°C / 13°C",
+            "condition": "Clear Sky",
+            "icon": "Sun"
+          },
+          {
+            "day": "Day 3",
+            "temp": "24°C / 12°C",
+            "condition": "Pleasant",
+            "icon": "Sun"
+          },
+          {
+            "day": "Day 4",
+            "temp": "25°C / 14°C",
+            "condition": "Sunny",
+            "icon": "Sun"
+          },
+          {
+            "day": "Day 5",
+            "temp": "24°C / 13°C",
+            "condition": "Clear",
+            "icon": "Sun"
+          }
+        ],
+        "tip": "Wake up early at 05:30 AM for the spiritual Subah-e-Banaras boat ride at Assi Ghat."
+      },
+      "hotelTiers": {
+        "budget": {
+          "name": "Gostops / Stops Hostel Riverside",
+          "pricePerNight": 750,
+          "type": "Riverside Backpacker"
+        },
+        "balanced": {
+          "name": "BrijRama Palace Heritage Hotel / Surya Haveli",
+          "pricePerNight": 5500,
+          "type": "Ghat-Facing Heritage"
+        },
+        "luxury": {
+          "name": "Taj Ganges / Nadesar Palace",
+          "pricePerNight": 21000,
+          "type": "Royal Sanctuary"
+        },
+        "cultural": {
+          "name": "Shree Ganesha Vedic Retreat",
+          "pricePerNight": 3200,
+          "type": "Spiritual Homestay"
+        }
+      },
+      "topAttractions": [
+        {
+          "id": "v1",
+          "name": "Grand Ganga Aarti at Dashashwamedh Ghat",
+          "timing": "06:30 PM - 08:00 PM",
+          "cost": 0,
+          "category": "Spiritual",
+          "icon": "Flame",
+          "desc": "World-famous ritual of fire, conch shells, and devotional chants."
+        },
+        {
+          "id": "v2",
+          "name": "Sunrise Hand-Rowed Boat Cruise",
+          "timing": "05:30 AM - 07:30 AM",
+          "cost": 800,
+          "category": "Culture",
+          "icon": "Sunrise",
+          "desc": "Glide past all 84 ghats as the city wakes up in spiritual reverence."
+        },
+        {
+          "id": "v3",
+          "name": "Kashi Vishwanath Corridor & Temple",
+          "timing": "08:30 AM - 11:00 AM",
+          "cost": 300,
+          "category": "Spiritual",
+          "icon": "Landmark",
+          "desc": "One of the twelve sacred Jyotirlingas with golden spires."
+        },
+        {
+          "id": "v4",
+          "name": "Sarnath Buddhist Excursion & Dhamek Stupa",
+          "timing": "01:30 PM - 04:30 PM",
+          "cost": 400,
+          "category": "Heritage",
+          "icon": "Compass",
+          "desc": "Site where Lord Buddha preached his first sermon after enlightenment."
+        },
+        {
+          "id": "v5",
+          "name": "Banarasi Silk Weaving Alley Exploration",
+          "timing": "04:30 PM - 06:30 PM",
+          "cost": 0,
+          "category": "Shopping",
+          "icon": "ShoppingBag",
+          "desc": "Witness master handloom weavers crafting pure Zari silk sarees."
+        }
+      ],
+      "foodRecommendations": [
+        {
+          "id": "vf1",
+          "name": "Kachori Sabzi & Crispy Jalebi",
+          "spot": "Ram Bhandar, Thatheri Bazaar",
+          "cost": 120,
+          "meal": "Breakfast"
+        },
+        {
+          "id": "vf2",
+          "name": "Creamy Malaiyyo & Pomegranate Lassi",
+          "spot": "Blue Lassi Shop / Shreeji Sweets",
+          "cost": 160,
+          "meal": "Dessert"
+        },
+        {
+          "id": "vf3",
+          "name": "Authentic Banarasi Paan",
+          "spot": "Keshav Tambool Bhandar",
+          "cost": 70,
+          "meal": "Treat"
+        },
+        {
+          "id": "vf4",
+          "name": "Satvik Thali with Baati Chokha",
+          "spot": "Baati Chokha Restaurant, Anand Mandir",
+          "cost": 380,
+          "meal": "Dinner"
+        }
+      ],
+      "plans": [
+        {
+          "id": "varanasi-budget",
+          "type": "budget",
+          "title": "Sacred Ghats & Mystic Alleys",
+          "badge": "Spiritual Solo",
+          "stayTier": "Ghat-side hostel / Dharamshala",
+          "estCostPerDay": 1600,
+          "highlight": "Walking alley food trails, evening aarti viewing, morning boat ride",
+          "defaultDays": 3
+        },
+        {
+          "id": "varanasi-balanced",
+          "type": "balanced",
+          "title": "Spiritual Heritage Odyssey",
+          "badge": "Most Recommended",
+          "stayTier": "Restored Ghat Palace / Boutique Haveli",
+          "estCostPerDay": 4800,
+          "highlight": "Private boat for aarti, guided Sarnath trip, VIP temple darshan pass",
+          "defaultDays": 4
+        },
+        {
+          "id": "varanasi-luxury",
+          "type": "luxury",
+          "title": "Kashi Royal Sanctum",
+          "badge": "Ultra Luxe Sanctuary",
+          "stayTier": "BrijRama Palace / Taj Ganges",
+          "estCostPerDay": 23500,
+          "highlight": "Luxury river cruiser, private Vedic astrologer consultation, gourmet satvik feasts",
+          "defaultDays": 3
+        }
+      ],
+      "createdAt": "2026-08-22T09:05:52.699Z",
+      "updatedAt": "2026-08-22T09:05:52.699Z"
+    },
+    {
+      "id": "goa",
+      "name": "Goa",
+      "state": "Goa",
+      "nickname": "Pearl of the Orient",
+      "tagline": "Pristine sun-kissed beaches, Portuguese villas, and vibrant coastal nightlife",
+      "category": "Beaches",
+      "heroImage": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1200&q=80",
+      "rating": 4.8,
+      "reviewCount": 4120,
+      "startingPrice": 3800,
+      "bestTimeToVisit": "November to February",
+      "coordinates": {
+        "lat": 15.2993,
+        "lng": 74.124
+      },
+      "weather": {
+        "temp": "31°C",
+        "condition": "Tropical Breeze",
+        "humidity": "65%",
+        "icon": "Sun",
+        "forecast": [
+          {
+            "day": "Day 1",
+            "temp": "31°C / 23°C",
+            "condition": "Sunny",
+            "icon": "Sun"
+          },
+          {
+            "day": "Day 2",
+            "temp": "30°C / 24°C",
+            "condition": "Breezy Coast",
+            "icon": "Wind"
+          },
+          {
+            "day": "Day 3",
+            "temp": "31°C / 23°C",
+            "condition": "Warm Sun",
+            "icon": "Sun"
+          },
+          {
+            "day": "Day 4",
+            "temp": "29°C / 22°C",
+            "condition": "Scattered Cloud",
+            "icon": "CloudSun"
+          },
+          {
+            "day": "Day 5",
+            "temp": "30°C / 23°C",
+            "condition": "Clear Sky",
+            "icon": "Sun"
+          }
+        ],
+        "tip": "Rent a scooter or Thar for scenic coastal drives. Carry mineral sunscreen and beach-friendly footwear."
+      },
+      "hotelTiers": {
+        "budget": {
+          "name": "Whoopers / Jungle by the Beach Hostel",
+          "pricePerNight": 900,
+          "type": "Beachside Hostel"
+        },
+        "balanced": {
+          "name": "Casa Severina / Nilaya Hermitage",
+          "pricePerNight": 4600,
+          "type": "Portuguese Boutique Villa"
+        },
+        "luxury": {
+          "name": "Taj Exotica / W Goa Vagator",
+          "pricePerNight": 24000,
+          "type": "5-Star Oceanfront Resort"
+        },
+        "cultural": {
+          "name": "Fontainhas Heritage Quarter Homestay",
+          "pricePerNight": 3900,
+          "type": "Latin Quarter Manor"
+        }
+      },
+      "topAttractions": [
+        {
+          "id": "g1",
+          "name": "Palolem & Butterfly Beach Cruise",
+          "timing": "08:30 AM - 12:00 PM",
+          "cost": 1200,
+          "category": "Adventure",
+          "icon": "Ship",
+          "desc": "Dolphin spotting and quiet emerald waters of South Goa."
+        },
+        {
+          "id": "g2",
+          "name": "Dudhsagar Waterfalls Trek & Jeep Safari",
+          "timing": "07:00 AM - 02:00 PM",
+          "cost": 1800,
+          "category": "Nature",
+          "icon": "Trees",
+          "desc": "Magnificent four-tiered waterfall inside Bhagwan Mahavir Wildlife Sanctuary."
+        },
+        {
+          "id": "g3",
+          "name": "Fontainhas Latin Quarter Walking Tour",
+          "timing": "04:00 PM - 06:30 PM",
+          "cost": 600,
+          "category": "Culture",
+          "icon": "MapPin",
+          "desc": "Stroll along vibrant yellow and pastel Portuguese villas & bakeries."
+        },
+        {
+          "id": "g4",
+          "name": "Fort Aguada & Lighthouse Sunset",
+          "timing": "05:00 PM - 07:00 PM",
+          "cost": 250,
+          "category": "Sightseeing",
+          "icon": "Sunset",
+          "desc": "17th-century Portuguese fortress overlooking the vast Arabian Sea."
+        },
+        {
+          "id": "g5",
+          "name": "Anjuna Flea Market & Live Music",
+          "timing": "06:00 PM - 10:00 PM",
+          "cost": 400,
+          "category": "Shopping",
+          "icon": "Music",
+          "desc": "Bohemian vibes, handmade trinkets, and coastal sundowner spots."
+        }
+      ],
+      "foodRecommendations": [
+        {
+          "id": "gf1",
+          "name": "Goan Fish Curry Thali with Kingfish",
+          "spot": "Fisherman's Wharf / Ritz Classic",
+          "cost": 550,
+          "meal": "Lunch"
+        },
+        {
+          "id": "gf2",
+          "name": "Prawn Balchão & Poi Bread",
+          "spot": "Mum's Kitchen, Panaji",
+          "cost": 750,
+          "meal": "Dinner"
+        },
+        {
+          "id": "gf3",
+          "name": "Traditional 7-Layer Bebinca & Feni Cocktail",
+          "spot": "Viva Panjim",
+          "cost": 350,
+          "meal": "Dessert"
+        },
+        {
+          "id": "gf4",
+          "name": "Nutella Crepes & Organic Smoothies",
+          "spot": "Artjuna Cafe, Anjuna",
+          "cost": 420,
+          "meal": "Breakfast"
+        }
+      ],
+      "plans": [
+        {
+          "id": "goa-budget",
+          "type": "budget",
+          "title": "Sun, Sand & Scooter Trails",
+          "badge": "Budget Friendly",
+          "stayTier": "Hostels in Anjuna / Palolem",
+          "estCostPerDay": 2100,
+          "highlight": "Scooter rental included, shack food, beach hopping, sunset viewpoints",
+          "defaultDays": 4
+        },
+        {
+          "id": "goa-balanced",
+          "type": "balanced",
+          "title": "Goan Riviera & Heritage Vibe",
+          "badge": "Most Balanced",
+          "stayTier": "Boutique Heritage Portuguese Villas",
+          "estCostPerDay": 5800,
+          "highlight": "Fontainhas walk, spice plantation thali lunch, South Goa secluded coves",
+          "defaultDays": 5
+        },
+        {
+          "id": "goa-luxury",
+          "type": "luxury",
+          "title": "Luxury Coastal Indulgence",
+          "badge": "5-Star Oceanfront",
+          "stayTier": "Taj Exotica / W Goa",
+          "estCostPerDay": 26500,
+          "highlight": "Private yacht charter on Mandovi, beachfront cabana dining, luxury spa",
+          "defaultDays": 4
+        },
+        {
+          "id": "goa-cultural",
+          "type": "cultural",
+          "title": "Old Goa & Latin Heritage Trail",
+          "badge": "History & Gastronomy",
+          "stayTier": "Panaji Heritage Mansion",
+          "estCostPerDay": 4500,
+          "highlight": "Basilica of Bom Jesus, Goan-Portuguese cooking masterclass, fado music",
+          "defaultDays": 3
+        }
+      ],
+      "createdAt": "2026-08-22T09:05:52.683Z",
+      "updatedAt": "2026-08-22T09:05:52.683Z"
+    },
+    {
+      "id": "jaipur",
+      "name": "Jaipur",
+      "state": "Rajasthan",
+      "nickname": "The Pink City",
+      "tagline": "Fortresses of Rajput royalty, vibrant bazaars, and opulent palaces",
+      "category": "Heritage",
+      "heroImage": "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1200&q=80",
+      "rating": 4.9,
+      "reviewCount": 3420,
+      "startingPrice": 4200,
+      "bestTimeToVisit": "October to March",
+      "coordinates": {
+        "lat": 26.9124,
+        "lng": 75.7873
+      },
+      "weather": {
+        "temp": "28°C",
+        "condition": "Sunny & Pleasant",
+        "humidity": "42%",
+        "icon": "Sun",
+        "forecast": [
+          {
+            "day": "Day 1",
+            "temp": "28°C / 16°C",
+            "condition": "Sunny",
+            "icon": "Sun"
+          },
+          {
+            "day": "Day 2",
+            "temp": "29°C / 17°C",
+            "condition": "Clear Sky",
+            "icon": "Sun"
+          },
+          {
+            "day": "Day 3",
+            "temp": "27°C / 15°C",
+            "condition": "Mild Breeze",
+            "icon": "Wind"
+          },
+          {
+            "day": "Day 4",
+            "temp": "28°C / 16°C",
+            "condition": "Partly Sunny",
+            "icon": "CloudSun"
+          },
+          {
+            "day": "Day 5",
+            "temp": "26°C / 15°C",
+            "condition": "Pleasant",
+            "icon": "Sun"
+          }
+        ],
+        "tip": "Carry sunglasses, light cotton clothing during the day, and a light jacket for breezy evenings at Nahargarh Fort."
+      },
+      "hotelTiers": {
+        "budget": {
+          "name": "Zostel / Moustache Heritage Hostel",
+          "pricePerNight": 850,
+          "type": "Co-living & Dorms"
+        },
+        "balanced": {
+          "name": "Alsisar Haveli / Rawla Mrignayani",
+          "pricePerNight": 4200,
+          "type": "Heritage Haveli"
+        },
+        "luxury": {
+          "name": "The Oberoi Rajvilas / Rambagh Palace",
+          "pricePerNight": 28500,
+          "type": "5-Star Royal Palace"
+        },
+        "cultural": {
+          "name": "Shahpura Haveli & Cultural Retreat",
+          "pricePerNight": 5600,
+          "type": "Art & Heritage Manor"
+        }
+      },
+      "topAttractions": [
+        {
+          "id": "j1",
+          "name": "Amber Fort & Palace",
+          "timing": "09:00 AM - 01:00 PM",
+          "cost": 500,
+          "category": "Sightseeing",
+          "icon": "Landmark",
+          "desc": "Grand hilltop Rajput fortress with mirror-work Sheesh Mahal."
+        },
+        {
+          "id": "j2",
+          "name": "Hawa Mahal (Palace of Winds)",
+          "timing": "02:00 PM - 03:30 PM",
+          "cost": 200,
+          "category": "Sightseeing",
+          "icon": "Camera",
+          "desc": "Iconic 5-storey pink sandstone facade with 953 ornate windows."
+        },
+        {
+          "id": "j3",
+          "name": "Nahargarh Fort Sunset Point",
+          "timing": "05:00 PM - 07:00 PM",
+          "cost": 300,
+          "category": "Adventure",
+          "icon": "Sunset",
+          "desc": "Panoramic sunset view over the sprawling Pink City skyline."
+        },
+        {
+          "id": "j4",
+          "name": "City Palace & Royal Observatory (Jantar Mantar)",
+          "timing": "10:00 AM - 01:30 PM",
+          "cost": 700,
+          "category": "Culture",
+          "icon": "Compass",
+          "desc": "Residence of the Jaipur Royal Family and UNESCO astronomical site."
+        },
+        {
+          "id": "j5",
+          "name": "Johari & Bapu Bazaars Textile Walk",
+          "timing": "04:30 PM - 07:30 PM",
+          "cost": 0,
+          "category": "Shopping",
+          "icon": "ShoppingBag",
+          "desc": "Traditional block prints, blue pottery, and silver jewelry lanes."
+        }
+      ],
+      "foodRecommendations": [
+        {
+          "id": "jf1",
+          "name": "Dal Baati Churma Thali",
+          "spot": "LMB (Laxmi Misthan Bhandar) / Chokhi Dhani",
+          "cost": 650,
+          "meal": "Dinner"
+        },
+        {
+          "id": "jf2",
+          "name": "Pyaaz Kachori & Lassi",
+          "spot": "Rawat Mishthan Bhandar",
+          "cost": 180,
+          "meal": "Breakfast"
+        },
+        {
+          "id": "jf3",
+          "name": "Royal Laal Maas & Rumali Roti",
+          "spot": "Handi Restaurant, MI Road",
+          "cost": 950,
+          "meal": "Dinner"
+        },
+        {
+          "id": "jf4",
+          "name": "Mawa Ghevar & Kesar Chai",
+          "spot": "Gulab Ji Chai Wale",
+          "cost": 140,
+          "meal": "Evening Snack"
+        }
+      ],
+      "plans": [
+        {
+          "id": "jaipur-budget",
+          "type": "budget",
+          "title": "Pink City Budget Backpacker",
+          "badge": "Most Popular for Solo Explorers",
+          "stayTier": "Hostel & Homestays",
+          "estCostPerDay": 1850,
+          "highlight": "E-rickshaw routes, street food food-walks, monument pass",
+          "defaultDays": 3
+        },
+        {
+          "id": "jaipur-balanced",
+          "type": "balanced",
+          "title": "Royal Heritage Explorer",
+          "badge": "Curated Best Value",
+          "stayTier": "Restored 19th Century Havelis",
+          "estCostPerDay": 5200,
+          "highlight": "Private AC cab, guided palace access, authentic Rajasthani thali feasts",
+          "defaultDays": 4
+        },
+        {
+          "id": "jaipur-luxury",
+          "type": "luxury",
+          "title": "Maharaja Royal Opulence",
+          "badge": "Ultra Premium Experience",
+          "stayTier": "Rambagh Palace / Fairmont",
+          "estCostPerDay": 32000,
+          "highlight": "Vintage car transfers, private sunrise balloon safari, royal dining",
+          "defaultDays": 4
+        },
+        {
+          "id": "jaipur-cultural",
+          "type": "cultural",
+          "title": "Artisans & Crafts Immersion",
+          "badge": "Handmade & Authentic",
+          "stayTier": "Boutique Art Residencies",
+          "estCostPerDay": 4100,
+          "highlight": "Bagru block-printing workshop, blue pottery studio, Sufi musical night",
+          "defaultDays": 3
+        }
+      ],
+      "createdAt": "2026-08-22T09:05:52.675Z",
+      "updatedAt": "2026-08-22T09:05:52.676Z"
+    }
+  ],
+  "likes": []
+}

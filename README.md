@@ -1,32 +1,34 @@
-# 🇮🇳 GlobeTrotter — Incredible India Travel Planning Web Application
+# 🇮🇳 GlobeTrotter — Incredible India Travel Planning Platform
 
-A responsive, production-ready frontend prototype for **GlobeTrotter** — an Incredible India travel planning platform built with React, Tailwind CSS, Lucide React icons, and INR (₹) localization.
+A full-stack travel planning web application for **Incredible India** built with React, Tailwind CSS, Lucide React icons, and a **persistent local database (`globetrotter-db.json`)** powered by an **Express.js REST API backend**.
 
-![GlobeTrotter Theme](https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=80)
+![GlobeTrotter Royal Theme](https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=80)
 
 ---
 
 ## ✨ Features
 
-- **Incredible India Design System**: Warm Saffron (`#F97316`), Deep Indian Teal (`#0D9488`), Marigold Gold, and warm sand tones.
+- **Royal Imperial Navy & Gold Theme**: Imperial Navy (`#0F172A`, `#1E1B4B`), Heritage Gold (`#F59E0B`, `#D97706`), and Ivory Sand (`#FAF8F5`).
+- **Persistent Local Database & Express Backend**:
+  - Standalone, zero-config local database engine at `server/database/globetrotter-db.json`.
+  - Auto-seeds on first startup with Indian cities, initial trips, and community itineraries.
+  - Complete REST API routes for Auth, Trips, Custom Activities, and Community Forking.
 - **Strict Real-Time Client Validation**:
   - RFC email regex validation.
-  - Password strength checklist (8+ chars, uppercase, lowercase, number, special char) with a 4-segment dynamic meter.
+  - Password strength checklist (8+ chars, uppercase, lowercase, number, special char) with 4-segment dynamic meter.
   - Strict password confirmation matching.
   - Start date $\ge$ today, end date $\ge$ start date.
-  - **14-Day Trip Restriction**: Warnings and disabled submit if trips exceed 14 days.
+  - **14-Day Trip Restriction**: Warning alert and disabled submit if trips exceed 14 days.
   - Travelers count strictly limited to 1–20.
   - Positive numeric budget validation ($> 0$).
-- **7 Detailed Indian Destinations**: Jaipur, Goa, Varanasi, Manali, Kerala (Munnar & Alleppey), Udaipur, and Agra with real activities, local food, hotel tiers, and 5-day weather forecasts.
+- **7 Detailed Indian Destinations**: Jaipur, Goa, Varanasi, Manali, Kerala (Munnar & Alleppey), Udaipur, and Agra with real monuments, local cuisine, hotel tiers, and 5-day weather forecasts.
 - **3-Step AI Trip Planning Wizard**:
   - **Step 1**: Setup (City, dates, travelers, style, target budget in ₹).
   - **Step 2**: Multi-plan comparison (*Budget Backpacker*, *Heritage Explorer*, *Luxury Heritage*, *Cultural Immersion*).
   - **Step 3**: Interactive Itinerary Customizer with Day-by-Day accordions, 5-day weather widget, route map, expense chart, and custom activity drawer with live cost recalculation in ₹.
 - **My Trips Deck & PDF Export**: Status filters (*Ongoing, Upcoming, Past*), delete confirmation modal, and printable travel pass with simulated QR code.
 - **Day & Month Timeline View**: Vertical chronological activity sequence with connecting line markers.
-- **Community Hub & 1-Click Forking**: Browse verified routes, filter by budget/city/duration, toggle likes, and click **"Copy / Fork Itinerary"** to clone into your own saved trips.
-- **LocalStorage Persistence**: Trips, custom activities, and likes persist seamlessly across browser sessions.
-- **Backend API Placeholders**: Standard `// TODO: API Endpoint - POST/GET/DELETE` comments over all async handlers.
+- **Community Hub & 1-Click Forking**: Browse verified routes, filter by budget/city/duration, toggle likes, and click **"Copy / Fork Itinerary"** to clone directly into your database.
 
 ---
 
@@ -40,54 +42,57 @@ A responsive, production-ready frontend prototype for **GlobeTrotter** — an In
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+git clone https://github.com/Diavora23/_Odoo-hack_.git
 
 # Navigate into project directory
-cd Globaltrotters
+cd _Odoo-hack_
 
 # Install dependencies
 npm install
 
-# Start development server
+# Start both Backend Database Server (port 5000) and Frontend (port 5173)
 npm run dev
 ```
 
-The application will be available at `http://localhost:5173/`.
+- **Frontend Application**: `http://localhost:5173/`
+- **Backend API & Database Health Check**: `http://localhost:5000/api/health`
 
-### Building for Production
+### Available Scripts
 
-```bash
-npm run build
-```
+| Command | Description |
+|---|---|
+| `npm run dev` | Runs both backend Express server and Vite frontend concurrently |
+| `npm run server` | Starts only the Express REST API backend and local database |
+| `npm run client` | Starts only the Vite frontend dev server |
+| `npm run build` | Compiles the production frontend bundle |
 
 ---
 
-## 📁 Project Structure
+## 📁 Full-Stack Architecture
 
 ```
-Globaltrotters/
-├── public/
+_Odoo-hack_/
+├── server/
+│   ├── controllers/
+│   │   ├── authController.js       # Auth (register, login, me)
+│   │   ├── citiesController.js     # Indian cities dataset & weather
+│   │   ├── communityController.js  # Community feed, liking, and 1-click forking
+│   │   └── tripsController.js      # Trips CRUD & custom activities
+│   ├── database/
+│   │   ├── db.js                   # Local database engine with persistent disk storage
+│   │   ├── seed.js                 # Automatic database seeder
+│   │   └── globetrotter-db.json    # Local JSON-backed database file
+│   ├── routes/                     # Express REST API routes
+│   └── server.js                   # Express server entry point (Port 5000)
 ├── src/
-│   ├── components/
-│   │   ├── auth/           # Login, Register, Password Strength Meter
-│   │   ├── calendar/       # Calendar Page, Vertical Timeline View
-│   │   ├── common/         # Navbar, Sidebar, Floating CTA, Toasts
-│   │   ├── community/      # Social Feed, Filters, Fork Itinerary Modal
-│   │   ├── dashboard/      # Hero Banner, Featured 7 Cities, Quick Trips, Tips
-│   │   ├── trips/          # My Trips Page, Trip Card, Printable PDF Voucher
-│   │   └── wizard/         # 3-Step Wizard, Map, Weather, Expense Chart
+│   ├── components/                 # React UI components (Royal Theme)
 │   ├── context/
-│   │   └── AppContext.jsx  # Global state & LocalStorage synchronization
-│   ├── data/
-│   │   ├── indianCities.js # 7 Indian destination models with ₹ pricing
-│   │   ├── mockTrips.js    # Initial sample trips
-│   │   └── communityTrips.js # Public shared itineraries
-│   ├── utils/
-│   │   ├── validation.js   # Real-time form validation engine
-│   │   ├── formatters.js   # INR (₹) formatters, date utilities
-│   │   └── planGenerator.js# Multi-tier itinerary generator
+│   │   └── AppContext.jsx          # Synchronized with local database API
+│   ├── services/
+│   │   └── api.js                  # Frontend API service layer
+│   ├── utils/                      # Form validation & INR formatters
+│   ├── data/                       # Indian cities & initial dataset
 │   ├── App.jsx
-│   ├── index.css
 │   └── main.jsx
 ├── tailwind.config.js
 ├── vite.config.js

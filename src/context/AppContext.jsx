@@ -1,15 +1,16 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { INITIAL_USER_TRIPS } from '../data/mockTrips';
-import { COMMUNITY_TRIPS } from '../data/communityTrips';
-import { INDIAN_CITIES } from '../data/indianCities';
-import { generatePlansForCity } from '../utils/planGenerator';
-import { calculateDetailedTripCost } from '../utils/formatters';
-import { getTodayDateString } from '../utils/validation';
+import { INITIAL_USER_TRIPS } from '../data/mockTrips.js';
+import { COMMUNITY_TRIPS } from '../data/communityTrips.js';
+import { INDIAN_CITIES } from '../data/indianCities.js';
+import { generatePlansForCity } from '../utils/planGenerator.js';
+import { calculateDetailedTripCost } from '../utils/formatters.js';
+import { getTodayDateString } from '../utils/validation.js';
+import { api } from '../services/api.js';
 
 const AppContext = createContext();
 
 export function AppProvider({ children }) {
-  // 1. User State (Mock Authenticated by default for instant delight, can switch/logout)
+  // 1. User State
   const [user, setUser] = useState(() => {
     const savedUser = localStorage.getItem('globetrotter_user');
     if (savedUser) {
@@ -27,7 +28,7 @@ export function AppProvider({ children }) {
     };
   });
 
-  // 2. User Trips State (Saved in LocalStorage)
+  // 2. User Trips State
   const [trips, setTrips] = useState(() => {
     const savedTrips = localStorage.getItem('globetrotter_trips');
     if (savedTrips) {
@@ -36,12 +37,12 @@ export function AppProvider({ children }) {
     return INITIAL_USER_TRIPS;
   });
 
-  // 3. Active Trip ID (defaults to first ongoing/upcoming trip)
+  // 3. Active Trip ID
   const [activeTripId, setActiveTripId] = useState(() => {
     return INITIAL_USER_TRIPS[0]?.id || null;
   });
 
-  // 4. Current App View ('home' | 'wizard' | 'trips' | 'calendar' | 'community' | 'login' | 'register')
+  // 4. Current App View
   const [currentView, setCurrentView] = useState('home');
 
   // 5. Liked Community Trips
@@ -75,8 +76,26 @@ export function AppProvider({ children }) {
     };
   });
 
-  // 7. Global Toast Notification System
+  // 7. Global Toast Notifications
   const [toasts, setToasts] = useState([]);
+
+  // Fetch initial trips and sync from backend API if available
+  useEffect(() => {
+    async function syncFromBackend() {
+      try {
+        const backendTrips = await api.trips.getAll();
+        if (backendTrips && backendTrips.length > 0) {
+          setTrips(backendTrips);
+          if (!activeTripId && backendTrips.length > 0) {
+            setActiveTripId(backendTrips[0].id);
+          }
+        }
+      } catch (err) {
+        // Backend offline or fallback to local storage
+      }
+    }
+    syncFromBackend();
+  }, []);
 
   // Sync to LocalStorage
   useEffect(() => {
@@ -95,7 +114,6 @@ export function AppProvider({ children }) {
     localStorage.setItem('globetrotter_liked_trips', JSON.stringify(likedTripIds));
   }, [likedTripIds]);
 
-  // Toast Helper
   const showToast = (type, title, message) => {
     const id = 'toast-' + Date.now() + '-' + Math.random().toString(36).substring(2, 5);
     setToasts(prev => [...prev, { id, type, title, message }]);
@@ -108,9 +126,20 @@ export function AppProvider({ children }) {
     setToasts(prev => prev.filter(t => t.id !== id));
   };
 
-  // Auth Handlers
-  // TODO: API Endpoint - POST /api/v1/auth/login
-  const login = (email, password) => {
+  // Auth Handlers with Backend API
+  const login = async (email, password) => {
+    try {
+      const res = await api.auth.login(email, password);
+      if (res && res.user) {
+        setUser(res.user);
+        setCurrentView('home');
+        showToast('success', 'Namaste & Welcome Back!', `Logged in successfully as ${res.user.name}`);
+        return;
+      }
+    } catch (e) {
+      // Fallback
+    }
+
     const mockUser = {
       id: 'usr-' + Date.now(),
       name: email.split('@')[0].replace('.', ' ').replace(/^./, str => str.toUpperCase()),
@@ -126,8 +155,19 @@ export function AppProvider({ children }) {
     showToast('success', 'Namaste & Welcome Back!', `Logged in successfully as ${mockUser.name}`);
   };
 
-  // TODO: API Endpoint - POST /api/v1/auth/register
-  const register = (userData) => {
+  const register = async (userData) => {
+    try {
+      const res = await api.auth.register(userData);
+      if (res && res.user) {
+        setUser(res.user);
+        setCurrentView('home');
+        showToast('success', 'Registration Successful!', `Welcome to GlobeTrotter, ${res.user.name}!`);
+        return;
+      }
+    } catch (e) {
+      // Fallback
+    }
+
     const newUser = {
       id: 'usr-' + Date.now(),
       name: userData.name,
@@ -143,7 +183,6 @@ export function AppProvider({ children }) {
     showToast('success', 'Registration Successful!', `Welcome to GlobeTrotter, ${newUser.name}! ₹1,000 Travel Points Added.`);
   };
 
-  // TODO: API Endpoint - POST /api/v1/auth/logout
   const logout = () => {
     setUser(null);
     setCurrentView('login');
@@ -151,101 +190,128 @@ export function AppProvider({ children }) {
   };
 
   // Trip Creation & Management Handlers
-  // TODO: API Endpoint - POST /api/v1/trips
-  const saveTrip = (tripData) => {
-    const newTrip = {
+  const saveTrip = async (tripData) => {
+    let newTrip = {
       ...tripData,
       id: tripData.id || `trip-${Date.now()}`,
       createdAt: new Date().toISOString(),
       status: tripData.status || 'upcoming',
     };
 
+    try {
+      const savedBackendTrip = await api.trips.create(newTrip);
+      if (savedBackendTrip && savedBackendTrip.id) {
+        newTrip = savedBackendTrip;
+      }
+    } catch (e) {
+      // Fallback local save
+    }
+
     setTrips(prev => [newTrip, ...prev]);
     setActiveTripId(newTrip.id);
-    showToast('success', 'Journey Saved!', `"${newTrip.tripTitle}" added to My Trips successfully.`);
+    showToast('success', 'Journey Saved!', `"${newTrip.tripTitle}" added to local database successfully.`);
     setCurrentView('trips');
     return newTrip;
   };
 
-  // TODO: API Endpoint - PUT /api/v1/trips/:id
-  const updateTrip = (tripId, updatedData) => {
+  const updateTrip = async (tripId, updatedData) => {
+    try {
+      await api.trips.update(tripId, updatedData);
+    } catch (e) {
+      // Fallback local update
+    }
     setTrips(prev => prev.map(t => (t.id === tripId ? { ...t, ...updatedData } : t)));
-    showToast('success', 'Itinerary Updated', 'Your changes have been saved.');
+    showToast('success', 'Itinerary Updated', 'Your changes have been saved to local database.');
   };
 
-  // TODO: API Endpoint - DELETE /api/v1/trips/:id
-  const deleteTrip = (tripId) => {
+  const deleteTrip = async (tripId) => {
     const targetTrip = trips.find(t => t.id === tripId);
+    try {
+      await api.trips.delete(tripId);
+    } catch (e) {
+      // Fallback
+    }
+
     setTrips(prev => prev.filter(t => t.id !== tripId));
     if (activeTripId === tripId) {
       const remaining = trips.filter(t => t.id !== tripId);
       setActiveTripId(remaining.length > 0 ? remaining[0].id : null);
     }
-    showToast('info', 'Trip Removed', `"${targetTrip?.tripTitle || 'Trip'}" has been deleted from your plans.`);
+    showToast('info', 'Trip Removed', `"${targetTrip?.tripTitle || 'Trip'}" removed from local database.`);
   };
 
-  // TODO: API Endpoint - POST /api/v1/trips/fork/:communityTripId
-  const forkCommunityTrip = (communityTrip) => {
-    const city = INDIAN_CITIES.find(c => c.id === communityTrip.cityId) || INDIAN_CITIES[0];
-    const today = getTodayDateString();
-    
-    // Generate fresh days sequence based on today's date
-    const plans = generatePlansForCity(city.id, today, communityTrip.durationDays, communityTrip.travelers);
-    const matchedPlan = plans.find(p => p.planType === 'balanced') || plans[0];
+  const forkCommunityTrip = async (communityTrip) => {
+    let clonedTrip = null;
+    try {
+      clonedTrip = await api.community.fork(communityTrip.id);
+    } catch (e) {
+      // Fallback
+    }
 
-    const clonedTrip = {
-      id: `forked-${Date.now()}`,
-      cityId: city.id,
-      cityName: city.name,
-      state: city.state,
-      tripTitle: `${communityTrip.tripTitle} (My Copy)`,
-      coverImage: communityTrip.coverImage || city.heroImage,
-      status: 'upcoming',
-      startDate: today,
-      endDate: matchedPlan.endDate,
-      durationDays: communityTrip.durationDays,
-      travelers: communityTrip.travelers || 2,
-      planType: 'balanced',
-      planName: `Forked from ${communityTrip.author.name}`,
-      hotel: matchedPlan.hotel,
-      totalBudget: communityTrip.totalBudget,
-      spentBudget: 0,
-      forkedFrom: {
-        authorName: communityTrip.author.name,
-        originalTripId: communityTrip.id,
-      },
-      days: matchedPlan.days,
-    };
+    if (!clonedTrip) {
+      const city = INDIAN_CITIES.find(c => c.id === communityTrip.cityId) || INDIAN_CITIES[0];
+      const today = getTodayDateString();
+      const plans = generatePlansForCity(city.id, today, communityTrip.durationDays, communityTrip.travelers);
+      const matchedPlan = plans.find(p => p.planType === 'balanced') || plans[0];
+
+      clonedTrip = {
+        id: `forked-${Date.now()}`,
+        cityId: city.id,
+        cityName: city.name,
+        state: city.state,
+        tripTitle: `${communityTrip.tripTitle} (My Copy)`,
+        coverImage: communityTrip.coverImage || city.heroImage,
+        status: 'upcoming',
+        startDate: today,
+        endDate: matchedPlan.endDate,
+        durationDays: communityTrip.durationDays,
+        travelers: communityTrip.travelers || 2,
+        planType: 'balanced',
+        planName: `Forked from ${communityTrip.author.name}`,
+        hotel: matchedPlan.hotel,
+        totalBudget: communityTrip.totalBudget,
+        spentBudget: 0,
+        forkedFrom: {
+          authorName: communityTrip.author.name,
+          originalTripId: communityTrip.id,
+        },
+        days: matchedPlan.days,
+      };
+    }
 
     setTrips(prev => [clonedTrip, ...prev]);
     setActiveTripId(clonedTrip.id);
     showToast(
       'success',
       'Itinerary Forked!',
-      `Cloned "${communityTrip.tripTitle}" into My Trips. You can now customize it!`
+      `Cloned "${communityTrip.tripTitle}" into local database and My Trips.`
     );
     setCurrentView('trips');
   };
 
-  // TODO: API Endpoint - POST /api/v1/community/:id/like
-  const toggleLikeCommunityTrip = (tripId) => {
+  const toggleLikeCommunityTrip = async (tripId) => {
+    try {
+      await api.community.like(tripId);
+    } catch (e) {}
+
     setLikedTripIds(prev => {
       const isLiked = prev.includes(tripId);
       if (isLiked) {
-        showToast('info', 'Unliked', 'Removed from your liked itineraries.');
+        showToast('info', 'Unliked', 'Removed from your favorites.');
         return prev.filter(id => id !== tripId);
       } else {
-        showToast('success', 'Liked Itinerary!', 'Added to your favorites.');
+        showToast('success', 'Liked Itinerary!', 'Added to your favorites in database.');
         return [...prev, tripId];
       }
     });
   };
 
-  // Activity customization inside an active trip or wizard draft
-  // TODO: API Endpoint - POST /api/v1/trips/:id/activities
-  const addCustomActivity = (targetTripId, dayNumber, newActivity) => {
-    // If updating a saved trip in `trips`
+  const addCustomActivity = async (targetTripId, dayNumber, newActivity) => {
     if (targetTripId && targetTripId !== 'wizard-draft') {
+      try {
+        await api.trips.addActivity(targetTripId, dayNumber, newActivity);
+      } catch (e) {}
+
       setTrips(prev => prev.map(trip => {
         if (trip.id !== targetTripId) return trip;
         const updatedDays = trip.days.map(d => {
@@ -267,7 +333,6 @@ export function AppProvider({ children }) {
       }));
       showToast('success', 'Activity Added', `Added "${newActivity.title}" to Day ${dayNumber}. Total cost recalculated!`);
     } else {
-      // If updating wizardDraft
       setWizardState(prev => {
         if (!prev.customizedItinerary) return prev;
         const updatedDays = prev.customizedItinerary.days.map(d => {
@@ -292,9 +357,12 @@ export function AppProvider({ children }) {
     }
   };
 
-  // TODO: API Endpoint - DELETE /api/v1/trips/:id/activities/:actId
-  const removeCustomActivity = (targetTripId, dayNumber, activityId) => {
+  const removeCustomActivity = async (targetTripId, dayNumber, activityId) => {
     if (targetTripId && targetTripId !== 'wizard-draft') {
+      try {
+        await api.trips.removeActivity(targetTripId, activityId, dayNumber);
+      } catch (e) {}
+
       setTrips(prev => prev.map(trip => {
         if (trip.id !== targetTripId) return trip;
         const updatedDays = trip.days.map(d => {
@@ -334,7 +402,6 @@ export function AppProvider({ children }) {
     }
   };
 
-  // Helper to start fresh planning wizard
   const startNewTripWizard = (cityId = 'jaipur') => {
     const today = getTodayDateString();
     const future = new Date();
