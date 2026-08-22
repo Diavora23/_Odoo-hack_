@@ -8,7 +8,6 @@ import {
 } from '../../utils/validation';
 import PasswordStrengthMeter from './PasswordStrengthMeter';
 import { 
-  Compass, 
   User, 
   Mail, 
   Lock, 
@@ -17,7 +16,7 @@ import {
   ArrowRight, 
   Luggage,
   Sparkles,
-  Crown
+  Plane
 } from 'lucide-react';
 
 export default function RegisterPage() {
@@ -119,18 +118,18 @@ export default function RegisterPage() {
 
   return (
     <div className="min-h-[85vh] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-lg w-full space-y-6 bg-white p-8 rounded-3xl shadow-2xl border border-sand-200 animate-slide-up relative overflow-hidden">
+      <div className="max-w-lg w-full space-y-6 bg-white p-8 rounded-3xl shadow-2xl border border-slate-200 animate-slide-up relative overflow-hidden">
         
         {/* Decorative Top Gradient Stripe */}
-        <div className="absolute top-0 left-0 right-0 h-2 royal-gold-gradient" />
+        <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#008cff] via-[#e41d24] to-[#ff4d52]" />
 
         {/* Header Branding */}
         <div className="text-center">
-          <div className="mx-auto w-12 h-12 rounded-2xl royal-gold-gradient flex items-center justify-center text-navy-950 shadow-lg shadow-gold-500/30 mb-2 font-bold">
-            <Crown className="w-7 h-7 text-navy-950 animate-pulse-subtle" />
+          <div className="mx-auto w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#e41d24] to-[#ff4d52] flex items-center justify-center text-white shadow-lg shadow-red-500/30 mb-2 font-bold">
+            <Plane className="w-7 h-7 text-white transform -rotate-45" />
           </div>
-          <h2 className="text-2xl font-extrabold font-heading text-navy-950">
-            Join Globe<span className="text-gold-600">Trotter</span> Royal
+          <h2 className="text-2xl font-extrabold font-heading text-slate-900">
+            Join Globe<span className="text-[#008cff]">Trotter</span>
           </h2>
           <p className="text-xs text-slate-500 mt-1">
             Unlock AI trip planning across India, INR budget tracking & verified itineraries
@@ -142,7 +141,7 @@ export default function RegisterPage() {
           
           {/* Full Name */}
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-navy-900 mb-1">
+            <label className="block text-xs font-bold uppercase tracking-wider text-slate-900 mb-1">
               Full Name
             </label>
             <div className="relative">
@@ -151,12 +150,12 @@ export default function RegisterPage() {
                 value={formData.name}
                 onChange={handleNameChange}
                 placeholder="e.g. Vikramaditya Rathore"
-                className={`w-full pl-10 pr-4 py-2.5 text-sm bg-sand-50 border rounded-xl focus:outline-none focus:ring-2 transition-all ${
+                className={`w-full pl-10 pr-4 py-2.5 text-sm bg-[#f4f7fa] border rounded-xl focus:outline-none focus:ring-2 transition-all ${
                   errors.name
                     ? 'border-red-400 focus:ring-red-300 bg-red-50/20'
                     : formData.name && !errors.name
                     ? 'border-emerald-400 focus:ring-emerald-300'
-                    : 'border-sand-300 focus:ring-gold-400 focus:border-gold-500 font-medium'
+                    : 'border-slate-300 focus:ring-[#008cff]/50 focus:border-[#008cff] font-medium'
                 }`}
               />
               <User className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
@@ -170,7 +169,7 @@ export default function RegisterPage() {
 
           {/* Email Address */}
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-navy-900 mb-1">
+            <label className="block text-xs font-bold uppercase tracking-wider text-slate-900 mb-1">
               Email Address
             </label>
             <div className="relative">
@@ -179,12 +178,12 @@ export default function RegisterPage() {
                 value={formData.email}
                 onChange={handleEmailChange}
                 placeholder="e.g. wanderer@traveler.in"
-                className={`w-full pl-10 pr-4 py-2.5 text-sm bg-sand-50 border rounded-xl focus:outline-none focus:ring-2 transition-all ${
+                className={`w-full pl-10 pr-4 py-2.5 text-sm bg-[#f4f7fa] border rounded-xl focus:outline-none focus:ring-2 transition-all ${
                   errors.email
                     ? 'border-red-400 focus:ring-red-300 bg-red-50/20'
                     : formData.email && !errors.email
                     ? 'border-emerald-400 focus:ring-emerald-300'
-                    : 'border-sand-300 focus:ring-gold-400 focus:border-gold-500 font-medium'
+                    : 'border-slate-300 focus:ring-[#008cff]/50 focus:border-[#008cff] font-medium'
                 }`}
               />
               <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
@@ -198,7 +197,7 @@ export default function RegisterPage() {
 
           {/* Password with Strength Meter */}
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-navy-900 mb-1">
+            <label className="block text-xs font-bold uppercase tracking-wider text-slate-900 mb-1">
               Password
             </label>
             <div className="relative">
@@ -207,12 +206,12 @@ export default function RegisterPage() {
                 value={formData.password}
                 onChange={handlePasswordChange}
                 placeholder="Min 8 chars, 1 uppercase, 1 lowercase, 1 number, 1 special"
-                className={`w-full pl-10 pr-10 py-2.5 text-sm bg-sand-50 border rounded-xl focus:outline-none focus:ring-2 transition-all ${
+                className={`w-full pl-10 pr-10 py-2.5 text-sm bg-[#f4f7fa] border rounded-xl focus:outline-none focus:ring-2 transition-all ${
                   errors.password
                     ? 'border-red-400 focus:ring-red-300'
                     : formData.password && !errors.password
                     ? 'border-emerald-400 focus:ring-emerald-300'
-                    : 'border-sand-300 focus:ring-gold-400 focus:border-gold-500 font-medium'
+                    : 'border-slate-300 focus:ring-[#008cff]/50 focus:border-[#008cff] font-medium'
                 }`}
               />
               <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
@@ -237,7 +236,7 @@ export default function RegisterPage() {
 
           {/* Confirm Password */}
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-navy-900 mb-1">
+            <label className="block text-xs font-bold uppercase tracking-wider text-slate-900 mb-1">
               Confirm Password
             </label>
             <div className="relative">
@@ -246,12 +245,12 @@ export default function RegisterPage() {
                 value={formData.confirmPassword}
                 onChange={handleConfirmPasswordChange}
                 placeholder="Re-enter password strictly matching above"
-                className={`w-full pl-10 pr-10 py-2.5 text-sm bg-sand-50 border rounded-xl focus:outline-none focus:ring-2 transition-all ${
+                className={`w-full pl-10 pr-10 py-2.5 text-sm bg-[#f4f7fa] border rounded-xl focus:outline-none focus:ring-2 transition-all ${
                   errors.confirmPassword
                     ? 'border-red-400 focus:ring-red-300 bg-red-50/20'
                     : formData.confirmPassword && !errors.confirmPassword
                     ? 'border-emerald-400 focus:ring-emerald-300'
-                    : 'border-sand-300 focus:ring-gold-400 focus:border-gold-500 font-medium'
+                    : 'border-slate-300 focus:ring-[#008cff]/50 focus:border-[#008cff] font-medium'
                 }`}
               />
               <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
@@ -272,14 +271,14 @@ export default function RegisterPage() {
 
           {/* Preferred Travel Style Dropdown */}
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-navy-900 mb-1">
+            <label className="block text-xs font-bold uppercase tracking-wider text-slate-900 mb-1">
               Preferred Travel Style
             </label>
             <div className="relative">
               <select
                 value={formData.travelStyle}
                 onChange={(e) => setFormData(prev => ({ ...prev, travelStyle: e.target.value }))}
-                className="w-full pl-10 pr-4 py-2.5 text-sm bg-sand-50 border border-sand-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-gold-500 text-navy-950 font-medium"
+                className="w-full pl-10 pr-4 py-2.5 text-sm bg-[#f4f7fa] border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#008cff] text-slate-900 font-medium"
               >
                 {travelStyles.map(s => (
                   <option key={s.value} value={s.value}>
@@ -291,36 +290,36 @@ export default function RegisterPage() {
             </div>
           </div>
 
-          {/* Bonus Points Badge */}
-          <div className="flex items-center gap-2 p-3 bg-gold-500/10 border border-gold-400/40 rounded-2xl text-xs text-gold-950">
-            <Crown className="w-4 h-4 text-gold-600 flex-shrink-0" />
-            <span>Bonus: Receive <strong>₹1,000 Royal Travel Points</strong> instantly on joining!</span>
+          {/* Bonus Points Badge (MMT Wallet Bonus) */}
+          <div className="flex items-center gap-2 p-3 bg-[#f0f7ff] border border-[#bae0fd] rounded-2xl text-xs text-[#0057ab]">
+            <Sparkles className="w-4 h-4 text-[#008cff] flex-shrink-0" />
+            <span>Bonus: Receive <strong>₹1,000 MMT Holiday Points</strong> on joining!</span>
           </div>
 
-          {/* Submit CTA */}
+          {/* Submit CTA (MakeMyTrip Red) */}
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full py-3 px-4 royal-gold-gradient hover:opacity-95 text-navy-950 font-heading font-extrabold text-sm rounded-xl shadow-lg shadow-gold-500/25 transition-all hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-2"
+            className="w-full py-3 px-4 bg-gradient-to-r from-[#e41d24] to-[#ff4d52] hover:from-[#d11218] hover:to-[#e41d24] text-white font-heading font-extrabold text-sm rounded-full shadow-lg shadow-red-500/25 transition-all hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-2"
           >
             {isSubmitting ? (
-              <div className="w-5 h-5 border-2 border-navy-950 border-t-transparent rounded-full animate-spin" />
+              <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
             ) : (
               <>
-                <span>Create Royal Account</span>
-                <ArrowRight className="w-4 h-4 text-navy-950" />
+                <span>Create MMT Account</span>
+                <ArrowRight className="w-4 h-4 text-white" />
               </>
             )}
           </button>
         </form>
 
         {/* Footer Link to Login */}
-        <div className="text-center pt-2 border-t border-sand-100">
+        <div className="text-center pt-2 border-t border-slate-100">
           <p className="text-xs text-slate-600">
             Already have an account?{' '}
             <button
               onClick={() => setCurrentView('login')}
-              className="font-bold text-gold-700 hover:text-gold-800 transition-colors"
+              className="font-bold text-[#008cff] hover:text-[#0057ab] transition-colors"
             >
               Sign In Here
             </button>

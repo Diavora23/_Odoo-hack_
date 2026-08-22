@@ -3,7 +3,7 @@ import { COMMUNITY_TRIPS } from '../../data/communityTrips';
 import CommunityCard from './CommunityCard';
 import CommunityFilter from './CommunityFilter';
 import CommunityModal from './CommunityModal';
-import { Users, Sparkles, Copy, Compass, Crown } from 'lucide-react';
+import { Users, Sparkles, Copy, Compass, Plane } from 'lucide-react';
 
 export default function CommunityPage() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -39,15 +39,15 @@ export default function CommunityPage() {
     <div className="space-y-8 pb-16 animate-fade-in">
       
       {/* Hero / Header */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-navy-950 via-navy-900 to-indigo-950 text-white p-6 sm:p-10 shadow-2xl border border-navy-800">
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#051329] via-[#0a2240] to-[#06488a] text-white p-6 sm:p-10 shadow-2xl border border-[#0a2240]">
         <div className="relative z-10 max-w-2xl space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500/15 text-gold-300 text-xs font-bold border border-gold-500/30">
-            <Crown className="w-3.5 h-3.5 text-gold-400" />
-            <span>Royal Travelers Social Feed</span>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#008cff]/15 text-[#7cc5fb] text-xs font-bold border border-[#008cff]/30">
+            <Plane className="w-3.5 h-3.5 text-[#008cff] transform -rotate-45" />
+            <span>MakeMyTrip Community Hub</span>
           </div>
 
           <h2 className="text-2xl sm:text-4xl font-extrabold font-heading tracking-tight text-white">
-            Discover & <span className="text-gradient-gold">Fork Verified Itineraries</span>
+            Discover & <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#008cff] to-[#7cc5fb]">Fork Verified Itineraries</span>
           </h2>
 
           <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
@@ -56,9 +56,9 @@ export default function CommunityPage() {
         </div>
 
         {/* Decorative Badge in Top Right */}
-        <div className="hidden lg:flex flex-col items-center justify-center absolute right-8 top-1/2 -translate-y-1/2 p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-gold-500/30 text-center">
-          <Copy className="w-8 h-8 text-gold-400 mb-1" />
-          <span className="text-sm font-bold font-heading text-gold-300">1-Click Forking</span>
+        <div className="hidden lg:flex flex-col items-center justify-center absolute right-8 top-1/2 -translate-y-1/2 p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-[#008cff]/30 text-center">
+          <Copy className="w-8 h-8 text-[#008cff] mb-1" />
+          <span className="text-sm font-bold font-heading text-white">1-Click Forking</span>
           <span className="text-[11px] text-slate-300">Directly into My Trips</span>
         </div>
       </div>
@@ -87,9 +87,9 @@ export default function CommunityPage() {
           ))}
         </div>
       ) : (
-        <div className="bg-white rounded-3xl p-12 text-center border border-dashed border-sand-300 space-y-3 max-w-md mx-auto">
-          <Compass className="w-10 h-10 text-gold-600 mx-auto" />
-          <h4 className="text-base font-bold font-heading text-navy-950">
+        <div className="bg-white rounded-3xl p-12 text-center border border-dashed border-slate-300 space-y-3 max-w-md mx-auto">
+          <Compass className="w-10 h-10 text-[#008cff] mx-auto" />
+          <h4 className="text-base font-bold font-heading text-slate-900">
             No Itineraries Match Your Filter
           </h4>
           <p className="text-xs text-slate-500">
@@ -102,7 +102,7 @@ export default function CommunityPage() {
               setBudgetRange('All');
               setDurationFilter('All');
             }}
-            className="px-4 py-2 bg-sand-100 hover:bg-sand-200 text-xs font-bold text-navy-900 rounded-xl"
+            className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-xs font-bold text-slate-800 rounded-full"
           >
             Clear All Filters
           </button>

@@ -6,10 +6,9 @@ import {
   Briefcase, 
   Plus, 
   Search, 
-  Crown,
   Compass, 
-  Layers,
-  ArrowUpDown
+  Luggage,
+  Plane
 } from 'lucide-react';
 
 export default function MyTripsPage() {
@@ -48,26 +47,26 @@ export default function MyTripsPage() {
     <div className="space-y-8 pb-16 animate-fade-in">
       
       {/* Page Header Banner */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 sm:p-8 rounded-3xl border border-sand-200 shadow-sm">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm">
         <div>
-          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gold-700 mb-1">
-            <Crown className="w-4 h-4 text-gold-600" />
-            <span>Royal Travel Dossier</span>
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#008cff] mb-1">
+            <Luggage className="w-4 h-4 text-[#008cff]" />
+            <span>My Bookings & Saved Holidays</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-navy-950">
-            Saved & Active Itineraries ({trips.length})
+          <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-slate-900">
+            Active & Saved Itineraries ({trips.length})
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 mt-1">
-            Manage your Indian voyages, view day-by-day timelines, and export printable travel passes.
+            Manage your Indian holiday packages, view day-by-day timelines, and export printable travel passes.
           </p>
         </div>
 
         <button
           onClick={() => startNewTripWizard()}
-          className="px-6 py-3.5 royal-gold-gradient hover:opacity-95 text-navy-950 font-heading font-extrabold text-xs sm:text-sm rounded-2xl shadow-xl shadow-gold-500/25 hover:scale-105 active:scale-95 transition-all flex items-center gap-2 flex-shrink-0"
+          className="px-6 py-3.5 bg-gradient-to-r from-[#e41d24] to-[#ff4d52] hover:from-[#d11218] hover:to-[#e41d24] text-white font-heading font-extrabold text-xs sm:text-sm rounded-full shadow-xl shadow-red-500/25 hover:scale-105 active:scale-95 transition-all flex items-center gap-2 flex-shrink-0"
         >
-          <Plus className="w-4 h-4 text-navy-950" />
-          <span>+ Plan New Journey</span>
+          <Plus className="w-4 h-4 text-white" />
+          <span>+ Plan New Holiday</span>
         </button>
       </div>
 
@@ -85,14 +84,14 @@ export default function MyTripsPage() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-4 py-2 text-xs font-bold rounded-2xl whitespace-nowrap transition-all flex items-center gap-1.5 ${
+              className={`px-4 py-2 text-xs font-bold rounded-full whitespace-nowrap transition-all flex items-center gap-1.5 ${
                 activeTab === tab.id
-                  ? 'bg-navy-900 text-gold-300 shadow-md border border-navy-800'
-                  : 'bg-white text-slate-600 hover:bg-sand-100 border border-sand-200'
+                  ? 'bg-[#008cff] text-white shadow-md'
+                  : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
               }`}
             >
               <span>{tab.label}</span>
-              <span className={`text-[10px] px-1.5 py-0.2 rounded-full ${activeTab === tab.id ? 'bg-navy-800 text-gold-300' : 'bg-sand-200 text-slate-700'}`}>
+              <span className={`text-[10px] px-1.5 py-0.2 rounded-full ${activeTab === tab.id ? 'bg-white/20 text-white' : 'bg-slate-200 text-slate-700'}`}>
                 {tab.count}
               </span>
             </button>
@@ -108,7 +107,7 @@ export default function MyTripsPage() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search by city or title..."
-              className="w-full pl-9 pr-4 py-2 text-xs bg-white border border-sand-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold-400"
+              className="w-full pl-9 pr-4 py-2 text-xs bg-white border border-slate-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#008cff]/50"
             />
             <Search className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-2.5" />
           </div>
@@ -117,7 +116,7 @@ export default function MyTripsPage() {
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            className="px-3 py-2 text-xs bg-white border border-sand-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold-400 text-navy-900 font-semibold"
+            className="px-3 py-2 text-xs bg-white border border-slate-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#008cff]/50 text-slate-900 font-semibold"
           >
             <option value="date">Sort: Latest Dates</option>
             <option value="budget-high">Sort: Budget (High to Low)</option>
@@ -140,12 +139,12 @@ export default function MyTripsPage() {
         </div>
       ) : (
         /* Empty State */
-        <div className="bg-white rounded-3xl p-12 text-center border border-dashed border-sand-300 space-y-4 max-w-lg mx-auto">
-          <div className="w-16 h-16 rounded-3xl bg-gold-100 text-gold-700 flex items-center justify-center mx-auto shadow-inner">
+        <div className="bg-white rounded-3xl p-12 text-center border border-dashed border-slate-300 space-y-4 max-w-lg mx-auto">
+          <div className="w-16 h-16 rounded-3xl bg-[#e0effe] text-[#008cff] flex items-center justify-center mx-auto shadow-inner">
             <Compass className="w-8 h-8 animate-pulse-subtle" />
           </div>
-          <h3 className="text-lg font-bold font-heading text-navy-950">
-            No Journeys Found
+          <h3 className="text-lg font-bold font-heading text-slate-900">
+            No Holidays Found
           </h3>
           <p className="text-xs text-slate-500 leading-relaxed">
             {searchQuery
@@ -154,9 +153,9 @@ export default function MyTripsPage() {
           </p>
           <button
             onClick={() => startNewTripWizard()}
-            className="px-6 py-3 royal-gold-gradient text-navy-950 font-heading font-extrabold text-xs rounded-xl shadow-lg shadow-gold-500/20 hover:scale-105 transition-all"
+            className="px-6 py-3 bg-gradient-to-r from-[#e41d24] to-[#ff4d52] text-white font-heading font-extrabold text-xs rounded-full shadow-lg shadow-red-500/20 hover:scale-105 transition-all"
           >
-            + Create Your First Royal Journey
+            + Create Your First Holiday
           </button>
         </div>
       )}

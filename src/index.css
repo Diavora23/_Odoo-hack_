@@ -8,61 +8,76 @@
   }
   
   body {
-    background-color: #faf8f5;
-    color: #0f172a;
+    background-color: #f2f5f8;
+    color: #1a1a1a;
     overflow-x: hidden;
   }
 }
 
 @layer utilities {
   .glass-card {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(0, 140, 255, 0.12);
   }
 
   .glass-card-navy {
-    background: rgba(15, 23, 42, 0.92);
+    background: rgba(5, 19, 41, 0.94);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(245, 158, 11, 0.25);
+    border: 1px solid rgba(0, 140, 255, 0.25);
+  }
+
+  /* MakeMyTrip Signature Gradients */
+  .mmt-blue-gradient {
+    background: linear-gradient(93deg, #53b2fe 0%, #065af3 100%);
+  }
+
+  .mmt-red-gradient {
+    background: linear-gradient(93deg, #e41d24 0%, #d11218 100%);
+  }
+
+  .mmt-hero-gradient {
+    background: linear-gradient(135deg, #051329 0%, #0a2240 65%, #06488a 100%);
   }
 
   .royal-gold-gradient {
-    background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
-  }
-
-  .imperial-navy-gradient {
-    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 60%, #312e81 100%);
-  }
-
-  .royal-combo-gradient {
-    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #d97706 100%);
+    background: linear-gradient(93deg, #53b2fe 0%, #065af3 100%);
   }
 
   .saffron-gradient {
-    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    background: linear-gradient(93deg, #e41d24 0%, #d11218 100%);
   }
 
   .teal-gradient {
-    background: linear-gradient(135deg, #4f46e5 0%, #312e81 100%);
+    background: linear-gradient(93deg, #008cff 0%, #0057ab 100%);
+  }
+
+  .imperial-navy-gradient {
+    background: linear-gradient(135deg, #051329 0%, #0a2240 100%);
   }
 
   .text-gradient-gold {
-    background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+    background: linear-gradient(93deg, #008cff 0%, #0057ab 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-red {
+    background: linear-gradient(93deg, #e41d24 0%, #d11218 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   .text-gradient-saffron {
-    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+    background: linear-gradient(93deg, #e41d24 0%, #008cff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   .text-gradient-india {
-    background: linear-gradient(135deg, #f59e0b 0%, #6366f1 100%);
+    background: linear-gradient(93deg, #e41d24 0%, #008cff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -75,17 +90,17 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #f4efe6;
+  background: #f2f5f8;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #cbd5e1;
   border-radius: 9999px;
-  border: 2px solid #f4efe6;
+  border: 2px solid #f2f5f8;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #008cff;
 }
 
 /* Print Styles for Itinerary Export */

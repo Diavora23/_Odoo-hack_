@@ -7,65 +7,88 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Royal Imperial Navy
-        navy: {
-          50: '#f0f4f8',
-          100: '#d9e2ec',
-          200: '#bcccdc',
-          300: '#9fb3c8',
-          400: '#627d98',
-          500: '#486581',
-          600: '#334e68',
-          700: '#243b53',
-          800: '#1e1b4b', // Imperial Deep Navy
-          900: '#0f172a', // Midnight Obsidian Navy
-          950: '#070a13',
+        // MakeMyTrip Signature Blue Palette
+        mmtBlue: {
+          50: '#f0f7ff',
+          100: '#e0effe',
+          200: '#bae0fd',
+          300: '#7cc5fb',
+          400: '#38a6f8',
+          500: '#008cff', // Core MMT Sky Blue
+          600: '#006ed6',
+          700: '#0057ab',
+          800: '#06488a',
+          900: '#0a2240', // MMT Header Deep Navy
+          950: '#051329', // MMT Midnight Dark Navy
         },
-        // Royal Heritage Gold
+        // MakeMyTrip Signature Red / Coral Palette
+        mmtRed: {
+          50: '#fef2f2',
+          100: '#ffe1e2',
+          200: '#ffc8cb',
+          300: '#ffa2a7',
+          400: '#f87171',
+          500: '#e41d24', // Core MMT Red
+          600: '#d11218',
+          700: '#b91c1c',
+          800: '#991b1b',
+          900: '#7f1d1d',
+        },
+        // Mapped helpers for seamless backward compatibility
+        navy: {
+          50: '#f0f7ff',
+          100: '#e0effe',
+          200: '#bae0fd',
+          300: '#7cc5fb',
+          400: '#38a6f8',
+          500: '#008cff',
+          600: '#006ed6',
+          700: '#0057ab',
+          800: '#0a2240',
+          900: '#051329',
+          950: '#030b17',
+        },
         gold: {
           50: '#fffbeb',
           100: '#fef3c7',
           200: '#fde68a',
           300: '#fcd34d',
           400: '#fbbf24',
-          500: '#f59e0b', // Imperial Gold
-          600: '#d97706', // Rich Royal Gold
-          700: '#b45309',
-          800: '#92400e',
-          900: '#78350f',
-          950: '#451a03',
+          500: '#ffb400', // MMT Star Rating Amber
+          600: '#e41d24', // Primary highlights
+          700: '#d11218',
+          800: '#b91c1c',
+          900: '#7f1d1d',
         },
         saffron: {
-          50: '#fffbeb',
-          100: '#fef3c7',
-          200: '#fde68a',
-          300: '#fcd34d',
-          400: '#fbbf24',
-          500: '#f59e0b', // Mapped to Royal Gold
-          600: '#d97706',
-          700: '#b45309',
-          800: '#92400e',
-          900: '#78350f',
-          950: '#451a03',
+          50: '#fef2f2',
+          100: '#ffe1e2',
+          200: '#ffc8cb',
+          300: '#ffa2a7',
+          400: '#f87171',
+          500: '#e41d24', // Mapped to MMT Red
+          600: '#d11218',
+          700: '#b91c1c',
+          800: '#991b1b',
+          900: '#7f1d1d',
         },
         indiaTeal: {
-          50: '#eef2ff',
-          100: '#e0e7ff',
-          200: '#c7d2fe',
-          300: '#a5b4fc',
-          400: '#818cf8',
-          500: '#6366f1',
-          600: '#4f46e5', // Royal Indigo Accent
-          700: '#4338ca',
-          800: '#3730a3',
-          900: '#1e1b4b',
-          950: '#0f172a',
+          50: '#f0f7ff',
+          100: '#e0effe',
+          200: '#bae0fd',
+          300: '#7cc5fb',
+          400: '#38a6f8',
+          500: '#008cff', // Mapped to MMT Blue
+          600: '#006ed6',
+          700: '#0057ab',
+          800: '#06488a',
+          900: '#0a2240',
         },
         sand: {
-          50: '#faf8f5',
-          100: '#f4efe6',
-          200: '#eae2d3',
-          300: '#ded1bc',
+          50: '#f4f7fa', // MMT Cool Light Gray background
+          100: '#eaf0f6',
+          200: '#dde6f0',
+          300: '#cbd7e6',
         }
       },
       fontFamily: {
@@ -73,9 +96,10 @@ export default {
         sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
       },
       boxShadow: {
-        'glow-gold': '0 0 25px -5px rgba(245, 158, 11, 0.45)',
-        'glow-navy': '0 0 25px -5px rgba(30, 27, 75, 0.5)',
-        'card-hover': '0 20px 30px -10px rgba(15, 23, 42, 0.12), 0 10px 10px -5px rgba(15, 23, 42, 0.06)',
+        'mmt-card': '0 4px 20px 0 rgba(0, 0, 0, 0.08)',
+        'mmt-hover': '0 12px 30px 0 rgba(0, 140, 255, 0.18)',
+        'glow-red': '0 0 25px -5px rgba(228, 29, 36, 0.4)',
+        'glow-blue': '0 0 25px -5px rgba(0, 140, 255, 0.4)',
       },
       animation: {
         'float': 'float 4s ease-in-out infinite',
